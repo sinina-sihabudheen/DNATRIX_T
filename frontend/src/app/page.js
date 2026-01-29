@@ -22,7 +22,7 @@ export default function Home() {
         <div className="absolute inset-0">
           {/* PLACEHOLDER: Add your hero image at /public/images/hero-bg.jpg */}
           <img 
-            src="/images/hero-bg.jpg" 
+            src="/images/hero-bg-1.jpg" 
             onError={(e) => {
               e.target.onerror = null; 
               e.target.src = "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
