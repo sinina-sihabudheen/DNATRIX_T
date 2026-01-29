@@ -1,80 +1,24 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   Search, Dna, Facebook, Twitter, Linkedin, Instagram, 
   Menu, X, Microscope, FlaskConical, Stethoscope, 
   Activity, Syringe, Users, Headphones, Phone, Mail, MapPin,
-  ChevronRight, ArrowRight
+  ChevronRight, ArrowRight, Wrench, HandCoins,
+  UserCheck,
+  UserRoundSearchIcon,BadgeDollarSign, LifeBuoy, UsersRound
 } from 'lucide-react';
+import Link from 'next/link';
+import { applications } from '@/app/data/applications';
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
       
-      {/* Top Bar / Navigation */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <div className="flex items-center gap-2">
-              {/* Replace with actual logo image if available: <img src="/images/logo.png" alt="DNA TRIX" className="h-10" /> */}
-              {/* <Dna className="h-8 w-8 text-blue-600" /> */}
-              <div className="flex flex-col">
-                <img src="/images/dnalogo1.png" alt="DNA TRIX" className="h-18 w-40" />
-              </div>
-            </div>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
-              {['Home', 'About', 'Applications', 'Events', 'Careers', 'Contact'].map((item) => (
-                <a 
-                  key={item} 
-                  href={`#${item.toLowerCase()}`} 
-                  className="text-gray-600 hover:text-blue-600 text-sm font-semibold uppercase tracking-wide transition-colors"
-                >
-                  {item}
-                </a>
-              ))}
-            </nav>
-
-            {/* Search & Mobile Menu */}
-            <div className="flex items-center gap-4">
-              <button className="text-gray-500 hover:text-blue-600">
-                <Search size={20} />
-              </button>
-              <button 
-                className="md:hidden text-gray-600"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              >
-                {isMenuOpen ? <X /> : <Menu />}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white border-t">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {['Home', 'About', 'Applications', 'Events', 'Careers', 'Contact'].map((item) => (
-                <a 
-                  key={item} 
-                  href={`#${item.toLowerCase()}`} 
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
-      </header>
 
       {/* Hero Section */}
-      <div className="relative bg-green-800 text-white overflow-hidden">
+      <div className="relative bg-teal-600 text-white overflow-hidden">
         <div className="absolute inset-0">
           {/* PLACEHOLDER: Add your hero image at /public/images/hero-bg.jpg */}
           <img 
@@ -99,9 +43,10 @@ export default function Home() {
             <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-xl">
               Pioneering medical and laboratory solutions for a healthier tomorrow.
             </p>
-            <button className="bg-gradient-to-r from-teal-500 to-gray-500 hover:from-tale-900 hover:to-gray-600 text-white px-8 py-3 rounded-full font-bold shadow-lg transform transition hover:scale-105">
-              VIEW ALL SERVICES
-            </button>
+            
+            <a href="/about" className="bg-gradient-to-r from-teal-500 to-gray-500 hover:from-cyan-600 hover:to-gray-600 text-white px-8 py-3 rounded-full font-semibold transition-all flex items-center gap-2 shadow-md w-fit">
+              VIEW ALL SERVICES <ArrowRight size={18} />
+            </a>
           </div>
         </div>
 
@@ -129,22 +74,57 @@ export default function Home() {
               <p className="text-gray-600 mb-8 leading-relaxed">
                 Our product range expands from basic day-to-day consumables right up to high-priority diagnostic solutions in the healthcare and veterinary markets, including life science and research facilities.              </p>
               
-              <button className="bg-gradient-to-r from-teal-500 to-gray-500 hover:from-cyan-600 hover:to-gray-600 text-white px-8 py-3 rounded-full font-semibold transition-all flex items-center gap-2 shadow-md">
+              <a href="/about" className="bg-gradient-to-r from-teal-500 to-gray-500 hover:from-cyan-600 hover:to-gray-600 text-white px-8 py-3 rounded-full font-semibold transition-all flex items-center gap-2 shadow-md w-fit">
                 LEARN MORE <ArrowRight size={18} />
-              </button>
+              </a>
             </div>
             <div className="relative">
-              <div className="absolute -inset-4 bg-tale-100 rounded-full blur-3xl opacity-50"></div>
-              {/* PLACEHOLDER: Add your about image at /public/images/about-dna.jpg */}
-              <img 
-                src="/images/bg2.jpg" 
-                onError={(e) => {
-                  e.target.onerror = null; 
-                  e.target.src = "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                }}
-                alt="DNA Research" 
-                className="relative rounded-2xl shadow-2xl w-full object-cover aspect-square"
-              />
+              {/* Equipment Collage Container */}
+              <div className="bg-[#134e4a] rounded-2xl p-6 shadow-2xl relative overflow-hidden min-h-[500px] flex items-center">
+                <div className="grid grid-cols-2 gap-6 relative z-10 w-full">
+                   {/* Top Left - Large Automated System */}
+                   <div className="bg-white p-3 rounded-xl shadow-md aspect-[4/3] flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                       <img 
+                         src="/images/collage/image_3.jpg" 
+                         className="max-h-full max-w-full object-contain" 
+                         alt="Lab Automation System" 
+                       />
+                   </div>
+                   
+                   {/* Top Right - Compact Reader */}
+                   <div className="bg-white p-3 rounded-xl shadow-md aspect-[4/3] flex items-center justify-center transform hover:scale-105 transition-transform duration-300 translate-y-8">
+                       <img 
+                         src="/images/collage/image_4.jpg" 
+                         className="max-h-full max-w-full object-contain" 
+                         alt="Microplate Reader" 
+                       />
+                   </div>
+
+                   {/* Bottom Left - Thermal Cycler */}
+                   <div className="bg-white p-3 rounded-xl shadow-md aspect-[4/3] flex items-center justify-center transform hover:scale-105 transition-transform duration-300 -translate-y-4">
+                       <img 
+                         src="/images/collage/image_5.jpg" 
+                         className="max-h-full max-w-full object-contain" 
+                         alt="PCR Thermal Cycler" 
+                       />
+                   </div>
+
+                   {/* Bottom Right - Analysis System */}
+                   <div className="bg-white p-3 rounded-xl shadow-md aspect-[4/3] flex items-center justify-center transform hover:scale-105 transition-transform duration-300 translate-y-4">
+                       <img 
+                         src="/images/collage/image_6.jpg" 
+                         className="max-h-full max-w-full object-contain" 
+                         alt="Genomic Analysis" 
+                       />
+                   </div>
+                </div>
+
+                {/* Decorative Elements */}
+                <div className="absolute bottom-0 right-0 p-4 opacity-20">
+                  <Dna size={120} className="text-teal-300" />
+                </div>
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent to-black/20 pointer-events-none"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -160,67 +140,92 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {[
-              { title: 'Molecular Biology', img: '/images/services/molecular.jpg' },
-              { title: 'Genomics', img: '/images/services/genomics.jpg' },
-              { title: 'Proteomics', img: '/images/services/proteomics.jpg' },
-              { title: 'Clinical Diagnostics', img: '/images/services/clinical.jpg' },
-              { title: 'Microbiology', img: '/images/services/microbilogy.jpg' },
-              { title: 'Veterinary Diagnostics', img: '/images/services/vetenary.jpg' },
-              { title: 'Haematology', img: '/images/services/haematology.jpg' },
-              { title: 'Histopathology', img: '/images/services/immunohistochemistry.jpg' },
-            ].map((app, idx) => (
-              <div key={idx} className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow group cursor-pointer">
+            {applications.slice(0, 8).map((app) => (
+              <Link
+                key={app.slug}
+                href={`/applications/${app.slug}`}
+                className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow group"
+              >
                 <div className="h-40 overflow-hidden bg-gray-200">
                   <img 
                     src={app.img} 
                     onError={(e) => {
                       e.target.onerror = null; 
-                      e.target.src = "https://placehold.co/400x300?text=" + encodeURIComponent(app.title);
+                      e.target.src = "https://placehold.co/400x300?text=" + encodeURIComponent(app.name);
                     }}
-                    alt={app.title} 
+                    alt={app.name} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-4 text-center">
-                  <h3 className="font-semibold text-gray-800 text-sm">{app.title}</h3>
+                  <h3 className="font-semibold text-gray-800 text-sm">{app.name}</h3>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
       </div>
 
       {/* Service Banner */}
-      <div className="relative py-16 bg-gradient-to-r from-green-900 to-tale-800 text-center text-white">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/medical-icons.png')]"></div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <div className="relative py-24 bg-cover bg-center">
+        <div className="absolute inset-0">
+          {/* PLACEHOLDER: Add your hero image at /public/images/hero-bg.jpg */}
+          <img 
+            src="/images/bg2.jpg" 
+            onError={(e) => {
+              e.target.onerror = null; 
+              e.target.src = "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+            }}
+            alt="Laboratory" 
+            className="w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-teal-900/90 to-transparent"></div>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-900/90 to-green-200/90 mix-blend-multiply"></div>
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight drop-shadow-lg">
             Our In-house service center for repair and <br/> after sales service
           </h2>
         </div>
       </div>
+      <div className='relative z-10 max-w-2xl mx-auto px-4 text-center'>
+          <h2 className='text-4xl md:text-4xl font-semibold text-amber-600 leading-tight drop-shadow-lg'>
+            OUR MISSION
+          </h2>
+        </div>
 
       {/* Support Cards */}
-      <div className="py-16 bg-white relative -mt-10 z-20">
+      <div className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-6">
+          {/* <div className="grid md:grid-cols-3 gap-6"> */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center">
+
             {[
-              { title: 'Market Support', icon: Users, color: 'from-orange-400 to-orange-600' },
-              { title: 'Sales Support', icon: Headphones, color: 'from-green-400 to-emerald-600' },
-              { title: 'Technical Support', icon: Activity, color: 'from-blue-400 to-blue-600' },
-              { title: 'Financial Support', icon: FlaskConical, color: 'from-purple-400 to-indigo-600' },
+              {
+                title: "Cost Effective Solutions",
+                icon: BadgeDollarSign,
+                text: "Delivering high-quality, cost-efficient diagnostic and laboratory solutions across diverse applications, ensuring accurate and reliable research outcomes."
+              },
+              {
+                title: "Excellent Support",
+                icon: LifeBuoy,
+                text: "Comprehensive technical and customer support covering product delivery, installation, training, and ongoing assistance to ensure seamless operations."
+              },
+              {
+                title: "Dedicated Team",
+                icon: UsersRound,
+                text: "A highly skilled team of biomedical engineers and application specialists committed to supporting customers before, during, and after implementation."
+              }
+              
             ].map((item, idx) => (
-              <div key={idx} className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 group hover:-translate-y-2 transition-transform">
-                <div className={`h-24 bg-gradient-to-br ${item.color} flex items-center justify-center`}>
-                  <item.icon className="text-white w-10 h-10" />
+              <div key={idx} className="bg-gradient-to-b from-teal-500 to-gray-700 rounded-xl p-8 text-center text-white shadow-xl hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center">
+                <div className="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mb-6 shadow-lg ring-4 ring-white/20">
+                  <item.icon className="w-10 h-10 text-white" />
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-xs text-gray-500">
-                    Dedicated professional support providing expert assistance for our customers.
-                  </p>
-                </div>
+                <h3 className="text-xl font-bold mb-4">{item.title}</h3>
+                <p className="text-sm leading-relaxed opacity-90">
+                  {item.text}
+                </p>
               </div>
             ))}
           </div>
@@ -233,7 +238,9 @@ export default function Home() {
           <span className="text-orange-500 font-bold uppercase text-sm tracking-wider">Our Partners</span>
           <h2 className="text-3xl font-bold text-gray-900 mt-2 mb-12">Key Accounts</h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-70 grayscale hover:grayscale-0 transition-all">
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-70 grayscale hover:grayscale-0 transition-all"> */}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-70 ">
+
              {/* PLACEHOLDER: Add partner logos in /public/images/partners/1.png, 2.png, etc. */}
              {[1,2,3,4,5,6,7,8,9,10].map((i) => (
                <div key={i} className="bg-white p-4 rounded-lg shadow-sm h-20 flex items-center justify-center">
@@ -257,98 +264,85 @@ export default function Home() {
       {/* News & Events */}
       <div id="events" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <span className="text-tale-600 font-bold uppercase text-sm tracking-wider">Our Latest</span>
+          <span className="text-blue-600 font-bold uppercase text-sm tracking-wider">Our Latest</span>
           <h2 className="text-3xl font-bold text-gray-900 mt-2 mb-12">News & Events</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="relative group overflow-hidden rounded-xl h-64 cursor-pointer">
-                {/* PLACEHOLDER: Add news images at /public/images/news/1.jpg, etc. */}
+            {[
+              {
+                id: 1,
+                tag: 'WEBINAR',
+                dateAbove: 'On 10th Jan 2026',
+                title: 'Digital pathology transforming workflows',
+                author: 'Dr. Raj Singh',
+                image: '/images/news/1.jpg'
+              },
+              {
+                id: 2,
+                tag: 'NEWS',
+                title: 'NHS to trial AI + robotics for early lung cancer detection',
+                dateBelow: '28 Jan 2026',
+                image: '/images/news/2.jpg'
+              },
+              {
+                id: 3,
+                tag: 'NEWS',
+                title: 'New rehabilitation tech helping veterans',
+                dateBelow: '28 Jan 2026',
+                image: '/images/news/3.jpg'
+              }
+            ].map((news) => (
+              <div key={news.id} className="relative group overflow-hidden rounded-xl h-80 cursor-pointer shadow-lg">
                 <img 
-                  src={`/images/news/${i}.jpg`} 
+                  src={news.image} 
                   onError={(e) => {
                     e.target.onerror = null; 
                     e.target.src = "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=600&q=80"
                   }}
-                  alt="News" 
+                  alt={news.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 text-left">
-                  <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded w-fit mb-2">NEWS</span>
-                  <h3 className="text-white font-bold text-lg leading-tight">
-                    Transforming Healthcare with AI Diagnostics
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 text-center items-center">
+                  
+                  {/* Tag/Badge */}
+                  <span className="bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded uppercase mb-3 tracking-wide">
+                    {news.tag}
+                  </span>
+
+                  {/* Date Above Title (for webinar style) */}
+                  {news.dateAbove && (
+                    <p className="text-gray-300 text-xs mb-2">{news.dateAbove}</p>
+                  )}
+
+                  {/* Title */}
+                  <h3 className="text-white font-bold text-xl leading-snug mb-4">
+                    {news.title}
                   </h3>
-                  <p className="text-gray-300 text-xs mt-2">28 Jan 2026</p>
+                  
+                  {/* Footer: Author or Date */}
+                  {news.author ? (
+                    <div className="flex items-center justify-center gap-2 text-gray-300 text-xs mt-2 border-t border-gray-600 pt-3 w-full max-w-[200px]">
+                       <div className="w-5 h-5 rounded-full bg-gray-400 overflow-hidden">
+                         <Users size={20} className="text-gray-600 p-0.5" />
+                       </div>
+                       <span>By {news.author}</span>
+                    </div>
+                  ) : (
+                     <p className="text-gray-400 text-xs mt-1">{news.dateBelow}</p>
+                  )}
                 </div>
               </div>
             ))}
           </div>
           
           <div className="mt-12">
-            {/* <button className="from-teal-600 to-gray-700 text-white px-8 py-3 rounded-full font-bold shadow-md transition-colors"> */}
-              <button className="bg-gradient-to-r from-teal-500 to-gray-500 hover:from-cyan-600 hover:to-gray-600 text-white px-8 py-3 rounded-full font-semibold transition-all items-center gap-2 shadow-md">
-              VIEW MORE
+            <button className="bg-gradient-to-r from-teal-500 to-gray-500 hover:from-cyan-700 hover:to-gray-700 text-white px-8 py-3 rounded-full font-bold shadow-md transition-all hover:shadow-lg">
+              MORE NEWS
             </button>
           </div>
+          
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-500 text-white pt-16 pb-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-12 border-b border-blue-800 pb-8">
-            <h2 className="text-2xl font-bold">Focused on Working with Advancement</h2>
-            <button className="mt-4 md:mt-0 bg-teal-500 hover:bg-green text-white px-6 py-2 rounded-full font-semibold">
-              CONTACT US
-            </button>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 text-sm text-blue-100">
-            <div>
-              <h4 className="font-bold text-white mb-4 uppercase">Quick Links</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white">Home</a></li>
-                <li><a href="#" className="hover:text-white">About</a></li>
-                <li><a href="#" className="hover:text-white">Services</a></li>
-                <li><a href="#" className="hover:text-white">Careers</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-white mb-4 uppercase">Applications</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white">Molecular Biology</a></li>
-                <li><a href="#" className="hover:text-white">Genomics</a></li>
-                <li><a href="#" className="hover:text-white">Clinical Diagnostics</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-white mb-4 uppercase">Corporate Headquarters</h4>
-              <div className="space-y-4">
-                <p className="font-bold text-white">DNA Trix</p>
-                <div className="flex items-start gap-3">
-                  <MapPin size={16} className="mt-1 shrink-0" />
-                  <p>Al-Ain, Industrial Area, UAE<br/>PO Box: 11234</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail size={16} />
-                  <p>info@dnatrix.com</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone size={16} />
-                  <p>+971 50 123 4567</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="bg-teal-700 py-4 mt-8">
-          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-xs">
-            <p>© 2026 DNA Trix. All rights reserved.</p>
-            <p>Designed by Sinina</p>
-          </div>
-        </div>
-      </footer>
 
     </div>
   );
