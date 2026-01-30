@@ -1,8 +1,7 @@
-'use client';
-
 import React from 'react';
-import { notFound, useParams } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import { applications } from '@/app/data/applications';
+import ImageWithFallback from '@/components/ImageWithFallback';
 
 const details = {
   'molecular-biology': {
@@ -18,8 +17,14 @@ const details = {
   },
 };
 
-export default function ApplicationDetail() {
-  const { slug } = useParams();
+export async function generateStaticParams() {
+  return applications.map((app) => ({
+    slug: app.slug,
+  }));
+}
+
+export default async function ApplicationDetail({ params }) {
+  const { slug } = await params;
   const app = applications.find(a => a.slug === slug);
   if (!app) {
     notFound();
@@ -31,12 +36,9 @@ export default function ApplicationDetail() {
     <div className="min-h-screen bg-white text-gray-800">
       <div className="relative h-[300px] overflow-hidden">
         <div className="absolute inset-0">
-          <img 
+          <ImageWithFallback 
             src={content?.heroImg || '/images/hero-bg.jpg'} 
-            onError={(e) => {
-              e.target.onerror = null; 
-              e.target.src = "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=2000&q=80";
-            }}
+            fallbackSrc="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=2000&q=80"
             alt={app.name} 
             className="w-full h-full object-cover"
           />
@@ -63,12 +65,9 @@ export default function ApplicationDetail() {
             <div key={idx} className="border-2 border-orange-300 rounded-xl p-6 bg-white shadow-sm">
               <div className="flex items-center gap-6">
                 <div className="w-28 h-28 bg-white border rounded-lg overflow-hidden flex-shrink-0">
-                  <img 
+                  <ImageWithFallback 
                     src={section.img}
-                    onError={(e) => {
-                      e.target.onerror = null; 
-                      e.target.src = "https://placehold.co/200x200?text=" + encodeURIComponent(section.title);
-                    }}
+                    fallbackSrc={"https://placehold.co/200x200?text=" + encodeURIComponent(section.title)}
                     alt={section.title}
                     className="w-full h-full object-cover"
                   />
@@ -89,21 +88,17 @@ export default function ApplicationDetail() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 items-center opacity-80 grayscale hover:grayscale-0 transition">
             {(content?.brands || ['/images/partners/1.png','/images/partners/2.png']).map((src, i) => (
               <div key={i} className="bg-white p-4 rounded-lg shadow-sm h-20 flex items-center justify-center">
-                <img 
+                <ImageWithFallback 
                   src={src}
-                  onError={(e) => {
-                    e.target.onerror = null; 
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'block';
-                  }}
+                  fallback={<span className="text-xs text-gray-400">Image not found</span>}
                   alt={`Brand ${i+1}`}
                   className="max-h-full max-w-full"
                 />
-                <span className="font-bold text-gray-400 hidden">BRAND {i+1}</span>
               </div>
             ))}
           </div>
         </div>
+
       </div>
     </div>
   );
