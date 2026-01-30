@@ -27,30 +27,28 @@ export default function Contact() {
     setStatus('loading');
     setErrorMessage('');
 
+    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdSFLqGc9_dPkERpJWxFAjxg5IuNBWl3Q0lhjvnf-NqWmm9IA/formResponse';
+    
     try {
-      const response = await fetch('/api/contact', {
+      const formBody = new FormData();
+      formBody.append('entry.289787565', formData.name);
+      formBody.append('entry.1863105331', formData.email);
+      formBody.append('entry.117074356', formData.phone);
+      formBody.append('entry.207996607', formData.message);
+
+      await fetch(GOOGLE_FORM_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        mode: 'no-cors',
+        body: formBody
       });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Something went wrong');
-      }
-
-      setStatus('success');
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       
-      // Reset success message after 5 seconds
+      setStatus('success');
+      setFormData({ name: '', email: '', phone: '', message: '' });
       setTimeout(() => setStatus('idle'), 5000);
     } catch (error) {
       console.error('Submission error:', error);
       setStatus('error');
-      setErrorMessage(error.message);
+      setErrorMessage('Failed to submit form. Please try again.');
     }
   };
 
@@ -117,18 +115,6 @@ export default function Contact() {
                   type="tel" 
                   id="phone" 
                   value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  className="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-teal-500 transition-colors" 
-                />
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-sm font-bold text-gray-700 mb-1">Subject <span className="text-red-500">*</span></label>
-                <input 
-                  type="text" 
-                  id="subject" 
-                  value={formData.subject}
                   onChange={handleChange}
                   required
                   className="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-teal-500 transition-colors" 

@@ -51,9 +51,21 @@ export default function Home() {
         </div>
 
         {/* Social Sidebar */}
-        <div className="hidden md:flex flex-col absolute right-0 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-md rounded-l-xl overflow-hidden">
-          {[Facebook, Twitter, Linkedin, Instagram].map((Icon, idx) => (
-            <a key={idx} href="#" className="p-3 hover:bg-blue-600 text-white transition-colors">
+        <div className="hidden md:flex flex-col absolute right-0 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-md rounded-l-xl overflow-hidden z-20">
+          {[
+            { Icon: Facebook, url: 'https://facebook.com', label: 'Facebook' },
+            { Icon: X, url: 'https://x.com', label: 'X' },
+            { Icon: Linkedin, url: 'https://linkedin.com', label: 'LinkedIn' },
+            { Icon: Instagram, url: 'https://instagram.com', label: 'Instagram' }
+          ].map(({ Icon, url, label }, idx) => (
+            <a 
+              key={idx} 
+              href={url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="p-3 hover:bg-blue-600 text-white transition-colors"
+            >
               <Icon size={20} />
             </a>
           ))}

@@ -35,7 +35,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex flex-col">
-              <img src="/images/dnalogo1.png" alt="DNA TRIX" className="h-18 w-40" />
+              <img src="/images/dnalogo.png" alt="DNA TRIX" className="h-20 w-40" />
             </Link>
           </div>
 

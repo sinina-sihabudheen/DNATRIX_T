@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center mb-12 border-b border-gray-600 pb-8">
           <h2 className="text-2xl md:text-3xl font-medium">Focused on Working with Advancement</h2>
-          <button className="mt-4 md:mt-0 bg-gradient-to-r from-teal-600 to-gray-500 hover:from-green-500 hover:to-green-400 text-white px-8 py-3 rounded-full font-bold shadow-lg transition-all uppercase text-sm tracking-wide">
+          <button className="mt-4 md:mt-0 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white px-8 py-3 rounded-full font-bold shadow-lg transition-all uppercase text-sm tracking-wide">
             CONTACT US
           </button>
         </div>
@@ -18,7 +18,7 @@ export default function Footer() {
             <h4 className="font-bold text-white mb-6 uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-4">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors text-white">About</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors font-bold text-white">About</Link></li>
               <li><Link href="#" className="hover:text-white transition-colors">Partners</Link></li>
               <li><Link href="#" className="hover:text-white transition-colors">Careers</Link></li>
               <li><Link href="#" className="hover:text-white transition-colors">Events</Link></li>
@@ -47,7 +47,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-white mb-6 uppercase tracking-wider">Corporate Headquarters</h4>
             <div className="space-y-6">
-              <p className="font-bold text-white text-lg">DNATRIX</p>
+              <p className="font-bold text-white text-lg">DNA Trix</p>
               
               <div className="space-y-1">
                 <p className="text-gray-400">Address :</p>

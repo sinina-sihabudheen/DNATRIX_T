@@ -44,7 +44,7 @@ export default function About() {
                  {/* <div className="absolute inset-0 border-4 border-dashed border-gray-300 rounded-full animate-spin-slow"></div> */}
                  <Dna size={120} className="text-teal-600" />
                  <img 
-                    src="/images/profile/logoring.png" 
+                    src="/images/profile/img_circle.png" 
                     onError={(e) => {
                       e.target.onerror = null; 
                       e.target.src = "https://images.unsplash.com/photo-1516549655169-df83a092fc43?auto=format&fit=crop&w=2000&q=80"
