@@ -22,12 +22,9 @@ export default function Home() {
       <div className="relative bg-teal-600 text-white overflow-hidden">
         <div className="absolute inset-0">
           {/* PLACEHOLDER: Add your hero image at /public/images/hero-bg.jpg */}
-          <img 
+          <ImageWithFallback 
             src="/images/hero-bg-1.jpg" 
-            onError={(e) => {
-              e.target.onerror = null; 
-              e.target.src = "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-            }}
+            fallbackSrc="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
             alt="Laboratory" 
             className="w-full h-full object-cover opacity-40"
           />
@@ -306,12 +303,9 @@ export default function Home() {
               }
             ].map((news) => (
               <div key={news.id} className="relative group overflow-hidden rounded-xl h-80 cursor-pointer shadow-lg">
-                <img 
+                <ImageWithFallback 
                   src={news.image} 
-                  onError={(e) => {
-                    e.target.onerror = null; 
-                    e.target.src = "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=600&q=80"
-                  }}
+                  fallbackSrc="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=600&q=80"
                   alt={news.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />

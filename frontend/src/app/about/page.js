@@ -46,10 +46,7 @@ export default function About() {
                  <Dna size={120} className="text-teal-600" />
                  <ImageWithFallback 
                     src="/images/profile/img_circle.png" 
-                    onError={(e) => {
-                      e.target.onerror = null; 
-                      e.target.src = "https://images.unsplash.com/photo-1516549655169-df83a092fc43?auto=format&fit=crop&w=2000&q=80"
-                    }}
+                    fallbackSrc="https://images.unsplash.com/photo-1516549655169-df83a092fc43?auto=format&fit=crop&w=2000&q=80"
                     alt="About DNATRIX logo" 
                     className="w-full h-full object-cover"
                   />        

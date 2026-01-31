@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { MapPin, Smartphone, Phone, Mail, MessageSquare, Loader2, CheckCircle2, XCircle } from 'lucide-react';
+import ImageWithFallback from '@/components/ImageWithFallback';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -57,12 +58,9 @@ export default function Contact() {
       {/* Hero Section */}
       <div className="relative h-[300px] md:h-[400px] overflow-hidden">
         <div className="absolute inset-0">
-          <img 
+          <ImageWithFallback 
             src="/images/contact-bg.jpg" 
-            onError={(e) => {
-              e.target.onerror = null; 
-              e.target.src = "https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&w=2000&q=80"
-            }}
+            fallbackSrc="https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&w=2000&q=80"
             alt="Contact Us" 
             className="w-full h-full object-cover"
           />
