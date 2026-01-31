@@ -18,6 +18,8 @@ export const metadata = {
   description: "Medical and Laboratory Solutions",
   icons: {
     icon: '/images/dnalogo.png',
+    shortcut: '/images/dnalogo.png',
+    apple: '/images/dnalogo.png',
   },
 };
 
