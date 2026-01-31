@@ -9,6 +9,7 @@ import {
   UserCheck, BadgeDollarSign, LifeBuoy, UsersRound,
   Building2, Map, Truck, Settings
 } from 'lucide-react';
+import ImageWithFallback from '@/components/ImageWithFallback';
 
 export default function About() {
   return (
@@ -18,7 +19,7 @@ export default function About() {
       {/* Hero Section */}
       <div className="relative h-[400px] overflow-hidden">
         <div className="absolute inset-0">
-          <img 
+          <ImageWithFallback 
             src="/images/profile/about1.jpg" 
             onError={(e) => {
               e.target.onerror = null; 
@@ -43,7 +44,7 @@ export default function About() {
                <div className="w-64 h-64 relative flex items-center justify-center">
                  {/* <div className="absolute inset-0 border-4 border-dashed border-gray-300 rounded-full animate-spin-slow"></div> */}
                  <Dna size={120} className="text-teal-600" />
-                 <img 
+                 <ImageWithFallback 
                     src="/images/profile/img_circle.png" 
                     onError={(e) => {
                       e.target.onerror = null; 
@@ -53,7 +54,7 @@ export default function About() {
                     className="w-full h-full object-cover"
                   />        
                  {/* Or use an image if available */}
-                 {/* <img src="/images/dna-circle.png" alt="DNA Circle" className="w-full h-full object-contain" /> */}
+                 {/* <ImageWithFallback src="/images/dna-circle.png" alt="DNA Circle" className="w-full h-full object-contain" /> */}
                </div>
             </div>
             <div>
@@ -193,7 +194,7 @@ export default function About() {
              {/* Reusing the loop from home page, limiting to fewer or same as home */}
              {[1,2,3,4,5,6,7,8].map((i) => (
                <div key={i} className="bg-white p-4 rounded-lg shadow-sm h-20 flex items-center justify-center">
-                 <img 
+                 <ImageWithFallback 
                    src={`/images/partners/${i}.png`} 
                    onError={(e) => {
                      e.target.onerror = null; 

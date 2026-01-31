@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Search, Menu, X, ChevronDown } from 'lucide-react';
 import { applications } from '@/app/data/applications';
+import ImageWithFallback from './ImageWithFallback';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,7 +36,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex flex-col">
-              <img src="/images/dnalogo.png" alt="DNA TRIX" className="h-20 w-40" />
+              <ImageWithFallback src="/images/dnalogo.png" alt="DNA TRIX" className="h-20 w-40" />
             </Link>
           </div>
 

@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { applications } from '@/app/data/applications';
+import ImageWithFallback from '@/components/ImageWithFallback';
 
 export default function Home() {
   return (

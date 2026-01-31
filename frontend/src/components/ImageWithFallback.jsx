@@ -14,11 +14,22 @@ export default function ImageWithFallback({
   className, 
   ...props 
 }) {
-  const [imgSrc, setImgSrc] = useState(src);
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  
+  const getPath = (path) => {
+    if (typeof path === 'string' && path.startsWith('/') && basePath) {
+       // Avoid double prefixing
+       if (path.startsWith(basePath)) return path;
+       return `${basePath}${path}`;
+    }
+    return path;
+  };
+
+  const [imgSrc, setImgSrc] = useState(getPath(src));
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
-    setImgSrc(src);
+    setImgSrc(getPath(src));
     setHasError(false);
   }, [src]);
 
@@ -26,7 +37,7 @@ export default function ImageWithFallback({
     if (!hasError) {
       setHasError(true);
       if (fallbackSrc) {
-        setImgSrc(fallbackSrc);
+        setImgSrc(getPath(fallbackSrc));
       }
     }
   };
