@@ -10,7 +10,7 @@ import {
   UserRoundSearchIcon,BadgeDollarSign, LifeBuoy, UsersRound
 } from 'lucide-react';
 import Link from 'next/link';
-import { applications } from '@/app/data/applications';
+import { products } from '@/app/data/products';
 import ImageWithFallback from '@/components/ImageWithFallback';
 
 export default function Home() {
@@ -76,7 +76,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-orange-500 font-bold uppercase text-sm tracking-wider">Introduction</span>
-              <h2 className="text-3xl font-bold text-gray-900 mt-2 mb-6">About DNA Trix</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mt-2 mb-6">About DNATRIX</h2>
               <div className="w-20 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mb-6"></div>
               
               <p className="text-gray-600 mb-4 leading-relaxed">
@@ -140,35 +140,35 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Applications / Services Section */}
-      <div id="applications" className="py-20 bg-gray-50">
+      {/* Products / Services Section */}
+      <div id="products" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-orange-500 font-bold uppercase text-sm tracking-wider">Our Services</span>
-            <h2 className="text-3xl font-bold text-gray-900 mt-2">Focus Applications</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mt-2">Focus Products</h2>
             <div className="w-16 h-1 bg-orange-500 mx-auto mt-4"></div>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {applications.slice(0, 8).map((app) => (
+            {products.slice(0, 8).map((product) => (
               <Link
-                key={app.slug}
-                href={`/applications/${app.slug}`}
+                key={product.slug}
+                href={`/products/${product.slug}`}
                 className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow group"
               >
                 <div className="h-40 overflow-hidden bg-gray-200">
                   <img 
-                    src={app.img} 
+                    src={product.img} 
                     onError={(e) => {
                       e.target.onerror = null; 
-                      e.target.src = "https://placehold.co/400x300?text=" + encodeURIComponent(app.name);
+                      e.target.src = "https://placehold.co/400x300?text=" + encodeURIComponent(product.name);
                     }}
-                    alt={app.name} 
+                    alt={product.name} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-4 text-center">
-                  <h3 className="font-semibold text-gray-800 text-sm">{app.name}</h3>
+                  <h3 className="font-semibold text-gray-800 text-sm">{product.name}</h3>
                 </div>
               </Link>
             ))}
@@ -198,159 +198,6 @@ export default function Home() {
           </h2>
         </div>
       </div>
-      <div className='relative z-10 max-w-2xl mx-auto px-4 text-center'>
-          <h2 className='text-4xl md:text-4xl font-semibold text-amber-600 leading-tight drop-shadow-lg'>
-            OUR MISSION
-          </h2>
-        </div>
-
-      {/* Support Cards */}
-      <div className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* <div className="grid md:grid-cols-3 gap-6"> */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center">
-
-            {[
-              {
-                title: "Cost Effective Solutions",
-                icon: BadgeDollarSign,
-                text: "Delivering high-quality, cost-efficient diagnostic and laboratory solutions across diverse applications, ensuring accurate and reliable research outcomes."
-              },
-              {
-                title: "Excellent Support",
-                icon: LifeBuoy,
-                text: "Comprehensive technical and customer support covering product delivery, installation, training, and ongoing assistance to ensure seamless operations."
-              },
-              {
-                title: "Dedicated Team",
-                icon: UsersRound,
-                text: "A highly skilled team of biomedical engineers and application specialists committed to supporting customers before, during, and after implementation."
-              }
-              
-            ].map((item, idx) => (
-              <div key={idx} className="bg-gradient-to-b from-teal-500 to-gray-700 rounded-xl p-8 text-center text-white shadow-xl hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center">
-                <div className="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mb-6 shadow-lg ring-4 ring-white/20">
-                  <item.icon className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-                <p className="text-sm leading-relaxed opacity-90">
-                  {item.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Partners / Key Account */}
-      <div className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <span className="text-orange-500 font-bold uppercase text-sm tracking-wider">Our Partners</span>
-          <h2 className="text-3xl font-bold text-gray-900 mt-2 mb-12">Key Accounts</h2>
-          
-          {/* <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-70 grayscale hover:grayscale-0 transition-all"> */}
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-70 ">
-
-             {/* PLACEHOLDER: Add partner logos in /public/images/partners/1.png, 2.png, etc. */}
-             {[1,2,3,4,5,6,7,8,9,10].map((i) => (
-               <div key={i} className="bg-white p-4 rounded-lg shadow-sm h-20 flex items-center justify-center">
-                 <img 
-                   src={`/images/partners/${i}.png`} 
-                   onError={(e) => {
-                     e.target.onerror = null; 
-                     e.target.style.display = 'none';
-                     e.target.nextSibling.style.display = 'block';
-                   }}
-                   alt={`Partner ${i}`}
-                   className="max-h-full max-w-full"
-                 />
-                 <span className="font-bold text-gray-400 hidden">PARTNER {i}</span>
-               </div>
-             ))}
-          </div>
-        </div>
-      </div>
-
-      {/* News & Events */}
-      <div id="events" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <span className="text-blue-600 font-bold uppercase text-sm tracking-wider">Our Latest</span>
-          <h2 className="text-3xl font-bold text-gray-900 mt-2 mb-12">News & Events</h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                id: 1,
-                tag: 'WEBINAR',
-                dateAbove: 'On 10th Jan 2026',
-                title: 'Digital pathology transforming workflows',
-                author: 'Dr. Raj Singh',
-                image: '/images/news/1.jpg'
-              },
-              {
-                id: 2,
-                tag: 'NEWS',
-                title: 'NHS to trial AI + robotics for early lung cancer detection',
-                dateBelow: '28 Jan 2026',
-                image: '/images/news/2.jpg'
-              },
-              {
-                id: 3,
-                tag: 'NEWS',
-                title: 'New rehabilitation tech helping veterans',
-                dateBelow: '28 Jan 2026',
-                image: '/images/news/3.jpg'
-              }
-            ].map((news) => (
-              <div key={news.id} className="relative group overflow-hidden rounded-xl h-80 cursor-pointer shadow-lg">
-                <ImageWithFallback 
-                  src={news.image} 
-                  fallbackSrc="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=600&q=80"
-                  alt={news.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 text-center items-center">
-                  
-                  {/* Tag/Badge */}
-                  <span className="bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded uppercase mb-3 tracking-wide">
-                    {news.tag}
-                  </span>
-
-                  {/* Date Above Title (for webinar style) */}
-                  {news.dateAbove && (
-                    <p className="text-gray-300 text-xs mb-2">{news.dateAbove}</p>
-                  )}
-
-                  {/* Title */}
-                  <h3 className="text-white font-bold text-xl leading-snug mb-4">
-                    {news.title}
-                  </h3>
-                  
-                  {/* Footer: Author or Date */}
-                  {news.author ? (
-                    <div className="flex items-center justify-center gap-2 text-gray-300 text-xs mt-2 border-t border-gray-600 pt-3 w-full max-w-[200px]">
-                       <div className="w-5 h-5 rounded-full bg-gray-400 overflow-hidden">
-                         <Users size={20} className="text-gray-600 p-0.5" />
-                       </div>
-                       <span>By {news.author}</span>
-                    </div>
-                  ) : (
-                     <p className="text-gray-400 text-xs mt-1">{news.dateBelow}</p>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="mt-12">
-            <button className="bg-gradient-to-r from-teal-500 to-gray-500 hover:from-cyan-700 hover:to-gray-700 text-white px-8 py-3 rounded-full font-bold shadow-md transition-all hover:shadow-lg">
-              MORE NEWS
-            </button>
-          </div>
-          
-        </div>
-      </div>
-
     </div>
   );
 }

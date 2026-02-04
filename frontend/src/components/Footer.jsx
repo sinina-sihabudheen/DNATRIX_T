@@ -26,9 +26,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Applications */}
+          {/* Products */}
           <div>
-            <h4 className="font-bold text-white mb-6 uppercase tracking-wider">Applications</h4>
+            <h4 className="font-bold text-white mb-6 uppercase tracking-wider">Products</h4>
             <ul className="space-y-4">
               <li><Link href="#" className="hover:text-white transition-colors">Molecular Biology</Link></li>
               <li><Link href="#" className="hover:text-white transition-colors">Genomics</Link></li>
