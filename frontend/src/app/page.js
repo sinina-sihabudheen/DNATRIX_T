@@ -77,14 +77,14 @@ export default function Home() {
             <div>
               <span className="text-orange-500 font-bold uppercase text-sm tracking-wider">Introduction</span>
               <h2 className="text-3xl font-bold text-gray-900 mt-2 mb-6">About DNATRIX</h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mb-6"></div>
+              <div className="w-20 h-1 bg-linear-to-r from-orange-400 to-orange-600 mb-6"></div>
               
               <p className="text-gray-600 mb-4 leading-relaxed">
                 With over 30 years of experience in the Middle East, the company focuses primarily on the medical and laboratory solutions market.              </p>
               <p className="text-gray-600 mb-8 leading-relaxed">
                 Our product range expands from basic day-to-day consumables right up to high-priority diagnostic solutions in the healthcare and veterinary markets, including life science and research facilities.              </p>
               
-              <a href="/about" className="bg-gradient-to-r from-teal-500 to-gray-500 hover:from-cyan-600 hover:to-gray-600 text-white px-8 py-3 rounded-full font-semibold transition-all flex items-center gap-2 shadow-md w-fit">
+              <a href="/about" className="bg-linear-to-r from-teal-500 to-gray-500 hover:from-cyan-600 hover:to-gray-600 text-white px-8 py-3 rounded-full font-semibold transition-all flex items-center gap-2 shadow-md w-fit">
                 LEARN MORE <ArrowRight size={18} />
               </a>
             </div>
@@ -137,6 +137,28 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+       {/* OMARK Official Supplier Section */}
+      <div className="py-16 bg-linear-to-r from-teal-700 to-teal-600 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center gap-8">
+          <p className="text-white uppercase tracking-widest font-semibold text-3xl m-0">Official Supplier of</p>
+          <a 
+            href="https://www.omarklabware.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="p-4 border border-gray-100 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white group transform hover:-translate-y-1 block"
+          >
+            <ImageWithFallback
+              src="/images/products_img/brands/foodmicrobiology/laboratoryconsumables/omark.png"
+              alt="OMARK"
+              width={200}
+              height={80}
+              className="h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+              fallbackSrc="https://placehold.co/240x100/white/black?text=OMARK"
+            />
+          </a>
         </div>
       </div>
 
@@ -252,6 +274,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+     
     </div>
   );
 }
