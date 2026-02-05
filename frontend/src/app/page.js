@@ -149,12 +149,12 @@ export default function Home() {
             <div className="w-16 h-1 bg-orange-500 mx-auto mt-4"></div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {products.slice(0, 8).map((product) => (
               <Link
                 key={product.slug}
                 href={`/products/${product.slug}`}
-                className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow group"
+                className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow group w-full max-w-xs"
               >
                 <div className="h-40 overflow-hidden bg-gray-200">
                   <img 
@@ -193,9 +193,63 @@ export default function Home() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-teal-900/90 to-green-200/90 mix-blend-multiply"></div>
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight drop-shadow-lg">
+          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight drop-shadow-lg mb-12">
             Our In-house service center for repair and <br/> after sales service
           </h2>
+          
+          {/* Services Tiles */}
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-orange-300 font-bold uppercase text-sm tracking-wider mb-10 relative inline-block">
+              Our Services
+              <span className="absolute -bottom-3 left-1/2 w-12 h-1 bg-orange-400 rounded-full transform -translate-x-1/2 opacity-80"></span>
+            </h3>
+            <div className="grid md:grid-cols-2 gap-8 px-4">
+              {/* BGI Service Tile */}
+              <Link href="/services" className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 hover:bg-teal-900/40 transition-all duration-300 group text-left hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-900/30 overflow-hidden flex flex-col h-full">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/10 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-teal-400/20 transition-all"></div>
+                
+                <div className="relative z-10 flex-1">
+                  <div className="w-16 h-16 bg-linear-to-br from-teal-400 to-teal-700 rounded-2xl rotate-3 group-hover:rotate-6 transition-transform shadow-lg flex items-center justify-center mb-6">
+                     <span
+                      className="text-white font-black text-xl tracking-tighter"
+                      style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}
+                    > 
+                      BGI
+                    </span>
+                  </div>
+                  
+                  <h4 className="text-2xl font-bold text-white mb-3 group-hover:text-teal-200 transition-colors">BGI Genomics</h4>
+                  <p className="text-teal-50/90 leading-relaxed font-light">
+                    Leading global provider of life science research services and multi-omics workflows.
+                  </p>
+                </div>
+                  
+                <div className="mt-8 flex items-center text-teal-200 font-medium text-sm group-hover:translate-x-2 transition-transform relative z-10">
+                  Learn more <ArrowRight size={16} className="ml-2" />
+                </div>
+              </Link>
+
+              {/* Biomedical Services Tile */}
+              <Link href="/services" className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 hover:bg-teal-900/40 transition-all duration-300 group text-left hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-900/30 overflow-hidden flex flex-col h-full">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-blue-400/20 transition-all"></div>
+                
+                <div className="relative z-10 flex-1">
+                  <div className="w-16 h-16 bg-linear-to-br from-blue-400 to-blue-600 rounded-2xl -rotate-3 group-hover:-rotate-6 transition-transform shadow-lg flex items-center justify-center mb-6 text-white">
+                    <Wrench size={30} />
+                  </div>
+                  
+                  <h4 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-200 transition-colors">Biomedical Services</h4>
+                  <p className="text-blue-50/90 leading-relaxed font-light">
+                    Comprehensive support, installation, and training from our dedicated engineering team.
+                  </p>
+                </div>
+                  
+                <div className="mt-8 flex items-center text-blue-300 font-medium text-sm group-hover:translate-x-2 transition-transform relative z-10">
+                  Learn more <ArrowRight size={16} className="ml-2" />
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

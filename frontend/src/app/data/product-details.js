@@ -9,32 +9,26 @@ export const productDetails = {
           { name: 'OMARK', 
             link: 'https://www.omarklabware.com/gammasterile', 
             img: '/images/products_img/brands/foodmicrobiology/laboratoryconsumables/omark.png'
-
           },
           { name: 'NASCO', 
             link: 'https://www.whirl-pak.com/explore-products/', 
             img: '/images/products_img/brands/foodmicrobiology/laboratoryconsumables/nasco.png' 
-
           },
           { name: 'TSC', 
             link: 'https://www.tscswabs.co.uk/Products', 
             img: '/images/products_img/brands/foodmicrobiology/laboratoryconsumables/tsc.png'
-
           },
           { name: 'CNWTC', 
             link: 'https://www.cnwtc.com/', 
-            img: '/images/products_img/brands/foodmicrobiology/laboratoryconsumables/cnwtc.png' 
-
+            img: '/images/products_img/brands/foodmicrobiology/laboratoryconsumables/cnwtc.png'
           },
           { name: 'GENFOLLOWER', 
             link: 'https://www.genfollower.com/centrifuge-tubes/', 
             img: '/images/products_img/brands/foodmicrobiology/laboratoryconsumables/genfollower.png'
-
           },
           { name: 'ALWSCI', 
             link: 'https://www.alwsci.com/', 
             img: '/images/products_img/brands/foodmicrobiology/laboratoryconsumables/alwsci.png'
-
           }
         ], 
         img: '/images/products_img/laboratory_consumables.jpg' 
@@ -45,37 +39,38 @@ export const productDetails = {
           { name: 'INTERSCIENCE', 
             link: 'https://www.interscience.com/en/products/', 
             img: '/images/products_img/brands/foodmicrobiology/laboratoryequipments/interscience.png' 
-
           },
           { name: 'METHER', 
             link: 'https://www.metherbiomedical.com/', 
             img: '/images/products_img/brands/foodmicrobiology/laboratoryequipments/mether.png' 
-
           },
           { name: 'NABERTHERM', 
             link: 'https://nabertherm.com/en', 
             img: '/images/products_img/brands/foodmicrobiology/laboratoryequipments/nabertherm.png' 
-
           },
           { name: 'WITEG', 
             link: 'https://www.witeg.de/en/products/laboratory-equipment', 
             img: '/images/products_img/brands/foodmicrobiology/laboratoryequipments/witeg.png'
-
           },
           { name: 'NICKEL ELECTRO', 
             link: 'https://nickel-electro.com/', 
             img: '/images/products_img/brands/foodmicrobiology/laboratoryequipments/nickel.png' 
-
           },
           { name: 'BIOLAB', 
             link: 'https://www.biolabscientific.com/', 
             img: '/images/products_img/brands/foodmicrobiology/laboratoryequipments/biolab.png' 
-
           },
           { name: 'BENCHMARK', 
             link: 'https://www.benchmarkscientific.com/', 
             img: '/images/products_img/brands/foodmicrobiology/laboratoryequipments/benchmark.png'
-
+          },
+          { name: 'IKA', 
+            link: 'https://www.ika.com/en', 
+            img: '/images/products_img/brands/ika.png' 
+          },
+          { name: 'AVANTOR', 
+            link: 'https://www.avantorsciences.com/uk/en/', 
+            img: '/images/products_img/brands/avantorscience.png' 
           }
         ], 
         img: '/images/products_img/labequips.jpg' 
@@ -86,22 +81,18 @@ export const productDetails = {
           { name: 'GOLD STANDARD DIAGNOSTIC', 
             link: 'https://www.goldstandarddiagnostics.com/', 
             img: '/images/products_img/brands/foodmicrobiology/reagents/goldstandard.png' 
-
           },
           { name: 'GENERON', 
             link: 'https://www.generon-food-safety.com/', 
             img: '/images/products_img/brands/foodmicrobiology/reagents/generon.png' 
-
           },
           { name: 'LGC', 
             link: 'https://www.lgcstandards.com/AE/en/', 
             img: '/images/products_img/brands/foodmicrobiology/reagents/lgc.png' 
-
           },
           { name: 'ACCUSTANDARD', 
             link: 'https://www.accustandard.com/', 
             img: '/images/products_img/brands/foodmicrobiology/reagents/accustandard.png'  
-
           }
         ], 
         img: '/images/products_img/reagents.jpg' 
@@ -123,8 +114,9 @@ export const productDetails = {
       '/images/products_img/brands/foodmicrobiology/reagents/goldstandard.png',
       '/images/products_img/brands/foodmicrobiology/reagents/accustandard.png',
       '/images/products_img/brands/foodmicrobiology/reagents/generon.png',
-      '/images/products_img/brands/foodmicrobiology/reagents/lgc.png'  
-
+      '/images/products_img/brands/foodmicrobiology/reagents/lgc.png',
+      '/images/products_img/brands/ika.png',
+      '/images/products_img/brands/avantorscience.png'
     ],
   },
   'life-science-laboratory-solutions': {
@@ -138,7 +130,6 @@ export const productDetails = {
             description: 'Digital PCR (QIAcuity dPCR System), Absolute nucleic acid quantification, Gene expression & molecular diagnostics', 
             link: 'https://www.qiagen.com/us/products/instruments-and-automation/pcr-instruments/qiacuity-digital-pcr-system', 
             img: '/images/products_img/brands/lifescience/qiagen.png' 
-          
           },
           { name: 'BIONEER', 
             description: 'DNA/RNA purification, PCR master mixes, Enzymes (polymerases, RT), Gene synthesis, Oligonucleotides, Automated nucleic acid extraction (ExiPrep)', 
@@ -183,6 +174,14 @@ export const productDetails = {
             description: 'Digital PCR for: Infectious disease surveillance, Food testing & quality control', 
             link: 'https://www.qiagen.com/us/products/instruments-and-automation/pcr-instruments/qiacuity-digital-pcr-system', 
             img: '/images/products_img/brands/lifescience/qiagen.png'
+          },
+          { name: 'IKA', 
+            link: 'https://www.ika.com/en', 
+            img: '/images/products_img/brands/ika.png' 
+          },
+          { name: 'AVANTOR', 
+            link: 'https://www.avantorsciences.com/uk/en/', 
+            img: '/images/products_img/brands/avantorscience.png' 
           }
         ], 
         img: '/images/products_img/microfood.jpg' 
@@ -197,6 +196,17 @@ export const productDetails = {
           }
         ], 
         img: '/images/products_img/imaging.jpg' 
+      },
+      { 
+        title: 'Fluorescence Microscopy', 
+        items: [
+          { name: 'LEAM', 
+            description: 'Sometimes, you don’t need a confocal microscope, strong optical path for fluorescence microscopes', 
+            link: 'https://www.leamsol.com/', 
+            img: '/images/products_img/brands/lifescience/leamsol.png' 
+          }
+        ], 
+        img: '/images/products_img/fluoroscience.jpg' 
       },
       { 
         title: 'Laboratory Cold Storage & Environmental Control', 
@@ -221,6 +231,16 @@ export const productDetails = {
         img: '/images/products_img/waterpurification.jpg' 
       }
     ],
-    brands: ['/images/products_img/brands/lifescience/bioneer.png', '/images/products_img/brands/lifescience/elk.png', '/images/products_img/brands/lifescience/qiagen.png' ,'/images/products_img/brands/lifescience/genscript.png', '/images/products_img/brands/lifescience/azure.png', '/images/products_img/brands/lifescience/berrytec.png','/images/products_img/brands/lifescience/effimed.png'],
+    brands: ['/images/products_img/brands/lifescience/bioneer.png', 
+      '/images/products_img/brands/lifescience/elk.png', 
+      '/images/products_img/brands/lifescience/qiagen.png' ,
+      '/images/products_img/brands/lifescience/genscript.png', 
+      '/images/products_img/brands/lifescience/azure.png', 
+      '/images/products_img/brands/lifescience/berrytec.png',
+      '/images/products_img/brands/lifescience/effimed.png',
+      '/images/products_img/brands/lifescience/leamsol.png',
+      '/images/products_img/brands/ika.png',
+      '/images/products_img/brands/avantorscience.png'
+    ],
   },
 };

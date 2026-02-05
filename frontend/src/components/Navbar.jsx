@@ -99,6 +99,9 @@ export default function Navbar() {
               </div>
             </div>
 
+            <Link href="/services" className={getLinkClass('/services')}>
+              Services
+            </Link>
             <Link href="/events" className={getLinkClass('/events')}>
               Events
             </Link>
@@ -215,6 +218,14 @@ export default function Navbar() {
                 </div>
               )}
             </div>
+
+            <Link 
+              href="/services" 
+              className={`px-4 py-3 rounded-lg ${isActive('/services') ? 'bg-orange-50 text-orange-500 font-semibold' : 'text-gray-700 hover:bg-gray-50'}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Services
+            </Link>
 
             <Link 
               href="/events" 
