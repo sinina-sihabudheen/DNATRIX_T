@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { MapPin, Smartphone, Phone, Mail, MessageSquare, Loader2, CheckCircle2, XCircle } from 'lucide-react';
+import { MapPin, Smartphone, Phone, Mail, MessageSquare, Loader2, CheckCircle2, XCircle, MessageCircle } from 'lucide-react';
 import ImageWithFallback from '@/components/ImageWithFallback';
 
 export default function Contact() {
@@ -23,33 +23,29 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('loading');
     setErrorMessage('');
 
-    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdSFLqGc9_dPkERpJWxFAjxg5IuNBWl3Q0lhjvnf-NqWmm9IA/formResponse';
-    
     try {
-      const formBody = new FormData();
-      formBody.append('entry.289787565', formData.name);
-      formBody.append('entry.1863105331', formData.email);
-      formBody.append('entry.117074356', formData.phone);
-      formBody.append('entry.207996607', formData.message);
+      const subject = `New Contact Request from ${formData.name}`;
+      const body = `Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
 
-      await fetch(GOOGLE_FORM_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formBody
-      });
+Message:
+${formData.message}`;
+
+      window.location.href = `mailto:info@dnatrixme.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       
       setStatus('success');
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       setTimeout(() => setStatus('idle'), 5000);
     } catch (error) {
       console.error('Submission error:', error);
       setStatus('error');
-      setErrorMessage('Failed to submit form. Please try again.');
+      setErrorMessage('Failed to open email client. Please try again.');
     }
   };
 
@@ -178,9 +174,18 @@ export default function Contact() {
                   <Smartphone size={24} />
                 </div>
                 <div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <span className="font-bold text-gray-700 w-20">Phone</span>
                     <span className="text-gray-600">: +9715 0730 0463</span>
+                    <a 
+                      href="https://wa.me/971507300463" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#25D366] hover:bg-[#128C7E] text-white text-xs font-bold rounded-full transition-colors shadow-sm ml-1"
+                    >
+                      <MessageCircle size={14} />
+                      WhatsApp
+                    </a>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="font-bold text-gray-700 w-20">Landline</span>
@@ -195,7 +200,7 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="font-bold text-gray-700 w-20">Email</span>
-                  <span className="text-gray-600 font-bold">: info@dnatrixme.com</span>
+                  <a href="mailto:info@dnatrixme.com" className="text-gray-600 font-bold hover:text-teal-600 transition-colors">: info@dnatrixme.com</a>
                 </div>
               </div>
             </div>
