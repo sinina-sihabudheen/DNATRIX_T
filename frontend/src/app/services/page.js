@@ -1,10 +1,11 @@
 import React from 'react';
 import ImageWithFallback from '@/components/ImageWithFallback';
 import Link from 'next/link';
+import { ClipboardList, LayoutDashboard, Microscope, Wind, ShieldCheck, FileCheck } from 'lucide-react';
 
 export const metadata = {
   title: 'Services | DNATRIX',
-  description: 'Our professional services including BGI Genomics and Biomedical Services.',
+  description: 'Our professional services including Turnkey Laboratory Solutions, Laboratory Setup Consultation, and Biomedical Services.',
 };
 
 export default function ServicesPage() {
@@ -28,31 +29,69 @@ export default function ServicesPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         
-        {/* BGI Service */}
+        {/* Turnkey Laboratory Solutions Service */}
         <div className="mb-20">
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="w-full md:w-1/3">
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden p-8 border border-gray-100 flex items-center justify-center h-full min-h-[300px]">
-                 {/* Placeholder for BGI Logo */}
                  <ImageWithFallback 
-            src="/images/service_bgi.jpg" 
-            fallbackSrc="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=2000&q=80"
-            alt="Services" 
+            src="/images/turnkey.jpeg" 
+            fallbackSrc="https://images.unsplash.com/photo-1581093588401-fbb62a02f138?auto=format&fit=crop&w=2000&q=80"
+            alt="Turnkey Laboratory Solutions" 
             className="w-full h-full object-cover"
           />
-                 {/* <h2 className="text-4xl font-bold text-teal-600">BGI</h2> */}
               </div>
             </div>
             <div className="w-full md:w-2/3">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">BGI Genomics</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Turnkey Laboratory Solutions</h2>
               <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                BGI Genomics is a leading global provider of life science research services, with more than two decades of experience in genomics and related omics technologies.
+                Dnatrix delivers end-to-end turnkey laboratory solutions for medical and food testing facilities across the UAE, GCC, and international markets. We manage the complete project lifecycle — from concept development and detailed design to execution, validation, and final handover — ensuring laboratories are fully operational, compliant, and ready for immediate use.
               </p>
-              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                We deliver end-to-end multi-omics workflows, covering the complete process from sample preparation and sequencing to data analysis and reporting.
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full h-px bg-gray-200 mb-20"></div>
+
+        {/* Laboratory Setup Consultation Service */}
+        <div className="mb-20">
+          <div className="flex flex-col gap-12">
+            <div className="w-full">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Laboratory Setup Consultation</h2>
+              <p className="text-lg text-gray-600 mb-4 leading-relaxed text-center max-w-4xl mx-auto">
+                Dnatrix provides expert laboratory setup consultation services for medical and food testing facilities. We support clients at every stage of planning, ensuring laboratories are designed for efficiency, safety, and regulatory compliance.
               </p>
-              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                Our services are designed to ensure high accuracy, reproducibility, and scalability across research and clinical applications. Our technical capabilities include genomics, spatial transcriptomics, single-cell omics, proteomics, metabolomics, and integrated multi-omics analysis, complemented by expertise in synthetic biology, bioinformatics pipelines, large-scale biological databases, and AI-enabled cloud computing platforms. These integrated solutions support complex data interpretation and enable comprehensive biological insights.
+              
+              <h3 className="text-xl font-bold text-teal-700 mb-8 text-center">Our consultation services include:</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div className="bg-teal-100 p-4 rounded-lg flex items-start gap-3 hover:bg-teal-100 transition-colors">
+                  <ClipboardList className="w-6 h-6 text-teal-600 mt-0.5 shrink-0" />
+                  <span className="text-gray-700 font-medium">Feasibility studies & project advisory</span>
+                </div>
+                <div className="bg-teal-100 p-4 rounded-lg flex items-start gap-3 hover:bg-teal-100 transition-colors">
+                  <LayoutDashboard className="w-6 h-6 text-teal-600 mt-0.5 shrink-0" />
+                  <span className="text-gray-700 font-medium">Laboratory layout planning & workflow optimization</span>
+                </div>
+                <div className="bg-teal-100 p-4 rounded-lg flex items-start gap-3 hover:bg-teal-100 transition-colors">
+                  <Microscope className="w-6 h-6 text-teal-600 mt-0.5 shrink-0" />
+                  <span className="text-gray-700 font-medium">Equipment selection & technical specifications</span>
+                </div>
+                <div className="bg-teal-100 p-4 rounded-lg flex items-start gap-3 hover:bg-teal-100 transition-colors">
+                  <Wind className="w-6 h-6 text-teal-600 mt-0.5 shrink-0" />
+                  <span className="text-gray-700 font-medium">HVAC, MEP & cleanroom advisory</span>
+                </div>
+                <div className="bg-teal-100 p-4 rounded-lg flex items-start gap-3 hover:bg-teal-100 transition-colors">
+                  <ShieldCheck className="w-6 h-6 text-teal-600 mt-0.5 shrink-0" />
+                  <span className="text-gray-700 font-medium">Biosafety, contamination control & risk assessment</span>
+                </div>
+                <div className="bg-teal-100 p-4 rounded-lg flex items-start gap-3 hover:bg-teal-100 transition-colors">
+                  <FileCheck className="w-6 h-6 text-teal-600 mt-0.5 shrink-0" />
+                  <span className="text-gray-700 font-medium">Compliance guidance with international and local standards (ISO, GMP, GLP)</span>
+                </div>
+              </div>
+              
+              <p className="text-lg text-gray-600 mb-4 leading-relaxed text-center max-w-4xl mx-auto">
+                With deep regional expertise across the UAE and GCC, combined with international best practices, we help clients make informed decisions and avoid costly redesigns or delays.
               </p>
             </div>
           </div>

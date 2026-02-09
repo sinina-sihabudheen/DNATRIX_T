@@ -145,6 +145,11 @@ export const productDetails = {
             description: 'Genome extraction reagents, Molecular biology reagents', 
             link: 'https://www.elkbiotech.com/', 
             img: '/images/products_img/brands/lifescience/elk.png' 
+          },
+          { name: 'BGI Genomics', 
+            description: 'BGI Genomics is a leading global provider of life science research services.', 
+            link: 'https://www.bgi.com/global', 
+            img: '/images/products_img/brands/lifescience/bgi.jpg' 
           }
         ], 
         img: '/images/products_img/genomics.jpg' 
@@ -240,7 +245,8 @@ export const productDetails = {
       '/images/products_img/brands/lifescience/effimed.png',
       '/images/products_img/brands/lifescience/leamsol.png',
       '/images/products_img/brands/ika.png',
-      '/images/products_img/brands/avantorscience.png'
+      '/images/products_img/brands/avantorscience.png',
+      '/images/products_img/brands/lifescience/bgi.jpg'
     ],
   },
 };

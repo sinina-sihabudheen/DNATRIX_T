@@ -132,7 +132,7 @@ export default function Footer() {
       <div className="bg-[#2d8b85] py-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm font-medium">
           <p>© 2026 DNATRIX. All rights reserved</p>
-          <p className="text-white font-normal text-xs">Designed By <span className="font-medium">Sinina</span></p>
+          <p className="text-white font-medium text-xs">Designed By <span className="font-normal italic" style={{ fontFamily: 'Arial, sans-serif' }}>Sinina Sihabudheen</span></p>
         </div>
       </div>
     </footer>

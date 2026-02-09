@@ -23,21 +23,25 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('loading');
     setErrorMessage('');
 
     try {
-      const subject = `New Contact Request from ${formData.name}`;
-      const body = `Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-Message:
-${formData.message}`;
+      const data = await response.json();
 
-      window.location.href = `mailto:info@dnatrixme.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
       
       setStatus('success');
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
@@ -45,7 +49,7 @@ ${formData.message}`;
     } catch (error) {
       console.error('Submission error:', error);
       setStatus('error');
-      setErrorMessage('Failed to open email client. Please try again.');
+      setErrorMessage(error.message || 'Failed to send message. Please try again.');
     }
   };
 
