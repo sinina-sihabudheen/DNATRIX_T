@@ -39,7 +39,7 @@ export default function Footer() {
             {/* OMARK Supplier Logo */}
             <div className="pt-4 mt-4 border-t border-gray-700 w-full">
               <p className="text-gray-400 text-xs uppercase tracking-wide mb-2">
-                Official Supplier of
+                Official Distributor of
               </p>
               <a
                 href="https://www.omarklabware.com/"
