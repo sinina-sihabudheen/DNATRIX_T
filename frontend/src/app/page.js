@@ -144,21 +144,38 @@ export default function Home() {
       <div className="py-16 bg-linear-to-r from-teal-700 to-teal-600 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center gap-8">
           <p className="text-white uppercase tracking-widest font-semibold text-3xl m-0">Official Distributor of</p>
-          <a 
-            href="https://www.omarklabware.com/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="p-4 border border-gray-100 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white group transform hover:-translate-y-1 block"
-          >
-            <ImageWithFallback
-              src="/images/products_img/brands/foodmicrobiology/laboratoryconsumables/omark.png"
-              alt="OMARK"
-              width={200}
-              height={80}
-              className="h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
-              fallbackSrc="https://placehold.co/240x100/white/black?text=OMARK"
-            />
-          </a>
+          <div className="flex items-center gap-6">
+            <a 
+              href="https://www.omarklabware.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-4 border border-gray-100 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white group transform hover:-translate-y-1 block"
+            >
+              <ImageWithFallback
+                src="/images/products_img/brands/foodmicrobiology/laboratoryconsumables/omark.png"
+                alt="OMARK"
+                width={200}
+                height={80}
+                className="h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                fallbackSrc="https://placehold.co/240x100/white/black?text=OMARK"
+              />
+            </a>
+            <a 
+              href="https://www.bgi.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-4 border border-gray-100 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white group transform hover:-translate-y-1 block"
+            >
+              <ImageWithFallback
+                src="/images/products_img/brands/lifescience/bgi.jpg"
+                alt="BGI"
+                width={200}
+                height={80}
+                className="h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                fallbackSrc="https://placehold.co/240x100/white/black?text=BGI"
+              />
+            </a>
+          </div>
         </div>
       </div>
 

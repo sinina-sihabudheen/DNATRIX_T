@@ -36,25 +36,41 @@ export default function Footer() {
               className="w-40 h-auto rounded-3xl"
             />  
 
-            {/* OMARK Supplier Logo */}
+            {/* OMARK & BGI Distributor Logos */}
             <div className="pt-4 mt-4 border-t border-gray-700 w-full">
               <p className="text-gray-400 text-xs uppercase tracking-wide mb-2">
                 Official Distributor of
               </p>
-              <a
-                href="https://www.omarklabware.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-white p-2 hover:opacity-90 transition-opacity"
-              >
-                <ImageWithFallback
-                  src="/images/products_img/brands/foodmicrobiology/laboratoryconsumables/omark.png"
-                  alt="OMARK"
-                  width={100}
-                  height={40}
-                  className="h-8 w-auto object-contain"
-                />
-              </a>
+              <div className="flex gap-3">
+                <a
+                  href="https://www.omarklabware.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-white p-2 hover:opacity-90 transition-opacity rounded-sm"
+                >
+                  <ImageWithFallback
+                    src="/images/products_img/brands/foodmicrobiology/laboratoryconsumables/omark.png"
+                    alt="OMARK"
+                    width={100}
+                    height={40}
+                    className="h-8 w-auto object-contain"
+                  />
+                </a>
+                <a
+                  href="https://www.bgi.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-white p-2 hover:opacity-90 transition-opacity rounded-sm"
+                >
+                  <ImageWithFallback
+                    src="/images/products_img/brands/lifescience/bgi.jpg"
+                    alt="BGI"
+                    width={100}
+                    height={40}
+                    className="h-8 w-auto object-contain"
+                  />
+                </a>
+              </div>
             </div>
           </div>
 
