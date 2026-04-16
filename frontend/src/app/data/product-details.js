@@ -150,6 +150,11 @@ export const productDetails = {
             description: 'BGI Genomics is a leading global provider of life science research services.', 
             link: 'https://www.bgi.com/global', 
             img: '/images/products_img/brands/lifescience/bgi.jpg' 
+          },
+          { name: 'Takara Bio', 
+            description: 'Innovative kits and reagents for life science research, PCR, cloning, and gene expression.', 
+            link: 'https://www.takarabio.com/', 
+            img: '/images/products_img/brands/lifescience/takara.png' 
           }
         ], 
         img: '/images/products_img/genomics.jpg' 
@@ -246,7 +251,8 @@ export const productDetails = {
       '/images/products_img/brands/lifescience/leamsol.png',
       '/images/products_img/brands/ika.png',
       '/images/products_img/brands/avantorscience.png',
-      '/images/products_img/brands/lifescience/bgi.jpg'
+      '/images/products_img/brands/lifescience/bgi.jpg',
+      '/images/products_img/brands/lifescience/takara.png'
     ],
   },
 };

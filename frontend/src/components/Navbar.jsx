@@ -49,7 +49,7 @@ export default function Navbar() {
               Home
             </Link>
             <Link href="/about" className={getLinkClass('/about')}>
-              About
+              About Us
             </Link>
 
             <div className="relative group">
@@ -188,7 +188,7 @@ export default function Navbar() {
               className={`px-4 py-3 rounded-lg ${isActive('/about') ? 'bg-orange-50 text-orange-500 font-semibold' : 'text-gray-700 hover:bg-gray-50'}`}
               onClick={() => setIsMenuOpen(false)}
             >
-              About
+              About Us
             </Link>
             
             {/* Mobile Products Dropdown */}

@@ -38,48 +38,53 @@ export default function Footer() {
 
             {/* OMARK & BGI Distributor Logos */}
             <div className="pt-4 mt-4 border-t border-gray-700 w-full">
-              <p className="text-gray-400 text-xs uppercase tracking-wide mb-2">
-                Official Distributor of
-              </p>
-              <div className="flex gap-3">
-                <a
-                  href="https://www.omarklabware.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-white p-2 hover:opacity-90 transition-opacity rounded-sm"
-                >
-                  <ImageWithFallback
-                    src="/images/products_img/brands/foodmicrobiology/laboratoryconsumables/omark.png"
-                    alt="OMARK"
-                    width={100}
-                    height={40}
-                    className="h-8 w-auto object-contain"
-                  />
-                </a>
-                <a
-                  href="https://www.bgi.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-white p-2 hover:opacity-90 transition-opacity rounded-sm"
-                >
-                  <ImageWithFallback
-                    src="/images/products_img/brands/lifescience/bgi.jpg"
-                    alt="BGI"
-                    width={100}
-                    height={40}
-                    className="h-8 w-auto object-contain"
-                  />
-                </a>
-              </div>
+              <div className="flex justify-between items-start gap-4">
+                <div>
+                  <p className="text-gray-400 text-xs uppercase tracking-wide mb-2">
+                    Official Distributor of
+                  </p>
+                  <div className="flex gap-3">
+                    <a
+                      href="https://www.omarklabware.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-white p-2 hover:opacity-90 transition-opacity rounded-sm"
+                    >
+                      <ImageWithFallback
+                        src="/images/products_img/brands/foodmicrobiology/laboratoryconsumables/omark.png"
+                        alt="OMARK"
+                        width={100}
+                        height={40}
+                        className="h-8 w-auto object-contain"
+                      />
+                    </a>
+                    <a
+                      href="https://www.bgi.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-white p-2 hover:opacity-90 transition-opacity rounded-sm"
+                    >
+                      <ImageWithFallback
+                        src="/images/products_img/brands/lifescience/bgi.jpg"
+                        alt="BGI"
+                        width={100}
+                        height={40}
+                        className="h-8 w-auto object-contain"
+                      />
+                    </a>
+                  </div>
+                </div>
+
             </div>
           </div>
+        </div>
 
           {/* Quick Links */}
           <div className="lg:col-span-2">
             <h4 className="font-bold text-white mb-4 uppercase tracking-wider text-sm">Quick Links</h4>
             <ul className="space-y-2">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/products" className="hover:text-white transition-colors">Products</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
               <li><Link href="/careers" className="hover:text-white transition-colors">Careers</Link></li>
@@ -101,6 +106,33 @@ export default function Footer() {
                   </h5>
                 </div>
               ))}
+            </div>
+
+            {/* Certifications Section */}
+            <div className="mt-8 pt-4 border-t border-gray-700">
+              <p className="text-gray-400 text-xs uppercase font-bold tracking-wider mb-3">
+                Certifications
+              </p>
+              <div className="flex gap-4">
+                <div className="bg-white p-1.5 rounded-md shadow-sm">
+                  <ImageWithFallback
+                    src="/images/iso_certified.png"
+                    alt="ISO 9001 Certified"
+                    width={50}
+                    height={50}
+                    className="h-10 w-auto object-contain"
+                  />
+                </div>
+                <div className="bg-white p-1.5 rounded-md shadow-sm">
+                  <ImageWithFallback
+                    src="/images/icv_certified.png"
+                    alt="ICV Certified"
+                    width={50}
+                    height={50}
+                    className="h-10 w-auto object-contain"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 

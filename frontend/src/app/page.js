@@ -76,7 +76,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-orange-500 font-bold uppercase text-sm tracking-wider">Introduction</span>
-              <h2 className="text-3xl font-bold text-gray-900 mt-2 mb-6">About DNATRIX</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mt-2 mb-6">About Us</h2>
               <div className="w-20 h-1 bg-linear-to-r from-orange-400 to-orange-600 mb-6"></div>
               
               <p className="text-gray-600 mb-4 leading-relaxed">
@@ -140,41 +140,90 @@ export default function Home() {
         </div>
       </div>
 
-       {/* OMARK Official Distributor Section */}
-      <div className="py-16 bg-linear-to-r from-teal-700 to-teal-600 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center gap-8">
-          <p className="text-white uppercase tracking-widest font-semibold text-3xl m-0">Official Distributor of</p>
-          <div className="flex items-center gap-6">
-            <a 
-              href="https://www.omarklabware.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="p-4 border border-gray-100 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white group transform hover:-translate-y-1 block"
-            >
-              <ImageWithFallback
-                src="/images/products_img/brands/foodmicrobiology/laboratoryconsumables/omark.png"
-                alt="OMARK"
-                width={200}
-                height={80}
-                className="h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
-                fallbackSrc="https://placehold.co/240x100/white/black?text=OMARK"
-              />
-            </a>
-            <a 
-              href="https://www.bgi.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="p-4 border border-gray-100 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white group transform hover:-translate-y-1 block"
-            >
-              <ImageWithFallback
-                src="/images/products_img/brands/lifescience/bgi.jpg"
-                alt="BGI"
-                width={200}
-                height={80}
-                className="h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
-                fallbackSrc="https://placehold.co/240x100/white/black?text=BGI"
-              />
-            </a>
+      {/* Official Distributor Section */}
+      <div className="py-12 bg-linear-to-r from-teal-700 to-teal-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+            <div className="text-center md:text-left">
+              <p className="text-teal-100 uppercase tracking-widest font-semibold text-sm mb-2">Partnering for Excellence</p>
+              <h2 className="text-white font-bold text-3xl m-0">Official Distributor</h2>
+            </div>
+            <div className="flex flex-wrap justify-center items-center gap-6">
+              <a 
+                href="https://www.omarklabware.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group transform hover:-translate-y-1 block"
+              >
+                <ImageWithFallback
+                  src="/images/products_img/brands/foodmicrobiology/laboratoryconsumables/omark.png"
+                  alt="OMARK"
+                  width={160}
+                  height={60}
+                  className="h-12 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                  fallbackSrc="https://placehold.co/200x80/white/black?text=OMARK"
+                />
+              </a>
+              <a 
+                href="https://www.bgi.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group transform hover:-translate-y-1 block"
+              >
+                <ImageWithFallback
+                  src="/images/products_img/brands/lifescience/bgi.jpg"
+                  alt="BGI"
+                  width={160}
+                  height={60}
+                  className="h-12 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                  fallbackSrc="https://placehold.co/200x80/white/black?text=BGI"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Certifications Section */}
+      <div className="py-16 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+            <div className="md:w-1/2">
+              <span className="text-orange-500 font-bold uppercase text-sm tracking-wider">Quality Assurance</span>
+              <h2 className="text-3xl font-bold text-gray-900 mt-2 mb-6">Our Certifications</h2>
+              <div className="w-20 h-1 bg-linear-to-r from-teal-400 to-teal-600 mb-6"></div>
+              <p className="text-gray-600 leading-relaxed mb-6 italic">
+                "We are proud to be ISO 9001 and ICV Certified, reflecting our commitment to the highest standards of quality management and our contribution to the UAE's local economy."
+              </p>
+            </div>
+            
+            <div className="md:w-1/2 flex justify-center items-center gap-12">
+              <div className="flex flex-col items-center gap-3 group">
+                <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-teal-200 bg-white">
+                  <ImageWithFallback
+                    src="/images/iso_certified.png"
+                    alt="ISO 9001 Certification"
+                    width={100}
+                    height={100}
+                    className="h-24 w-auto object-contain"
+                  />
+                </div>
+                <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">ISO 9001 Certified</p>
+              </div>
+
+              <div className="flex flex-col items-center gap-3 group">
+                <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-teal-200 bg-white">
+                  <ImageWithFallback
+                    src="/images/icv_certified.png"
+                    alt="ICV Certification"
+                    width={100}
+                    height={100}
+                    className="h-24 w-auto object-contain"
+                  />
+                </div>
+                <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">ICV Certified</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

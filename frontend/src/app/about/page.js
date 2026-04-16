@@ -31,7 +31,7 @@ export default function About() {
           <div className="absolute inset-0 bg-teal-900/40"></div>
         </div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-teal-500 drop-shadow-lg">About</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-teal-500 drop-shadow-lg">About Us</h1>
         </div>
       </div>
 
@@ -176,6 +176,50 @@ export default function About() {
             </div>
           ))}
 
+        </div>
+      </div>
+    </div>
+
+    {/* Certifications Section */}
+    <div className="py-20 bg-gray-50 border-y border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+          <div className="md:w-1/2">
+            <span className="text-orange-500 font-bold uppercase text-sm tracking-wider">Quality Assurance</span>
+            <h2 className="text-3xl font-bold text-gray-900 mt-2 mb-6">Our Certifications</h2>
+            <div className="w-20 h-1 bg-linear-to-r from-teal-400 to-teal-600 mb-6"></div>
+            <p className="text-gray-600 leading-relaxed mb-6 italic">
+              "DNATRIX is committed to excellence. Our ISO 9001 and ICV certifications stand as a testament to our dedication to quality management and our integral role in the UAE's economic growth."
+            </p>
+          </div>
+          
+          <div className="md:w-1/2 flex justify-center items-center gap-12">
+            <div className="flex flex-col items-center gap-4 group">
+              <div className="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm transition-all duration-300 group-hover:shadow-xl group-hover:border-teal-200 group-hover:-translate-y-1">
+                <ImageWithFallback
+                  src="/images/iso_certified.png"
+                  alt="ISO 9001 Certification"
+                  width={120}
+                  height={120}
+                  className="h-28 w-auto object-contain"
+                />
+              </div>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest group-hover:text-teal-600 transition-colors">ISO 9001 Certified</p>
+            </div>
+
+            <div className="flex flex-col items-center gap-4 group">
+              <div className="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm transition-all duration-300 group-hover:shadow-xl group-hover:border-teal-200 group-hover:-translate-y-1">
+                <ImageWithFallback
+                  src="/images/icv_certified.png"
+                  alt="ICV Certification"
+                  width={120}
+                  height={120}
+                  className="h-28 w-auto object-contain"
+                />
+              </div>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest group-hover:text-teal-600 transition-colors">ICV Certified</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
