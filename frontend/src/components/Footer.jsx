@@ -72,6 +72,20 @@ export default function Footer() {
                         className="h-8 w-auto object-contain"
                       />
                     </a>
+                    <a
+                      href="https://www.takarabio.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-white p-2 hover:opacity-90 transition-opacity rounded-sm"
+                    >
+                      <ImageWithFallback
+                        src="/images/products_img/brands/lifescience/takara.png"
+                        alt="Takara Bio"
+                        width={100}
+                        height={40}
+                        className="h-8 w-auto object-contain"
+                      />
+                    </a>
                   </div>
                 </div>
 

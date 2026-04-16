@@ -179,6 +179,21 @@ export default function Home() {
                   fallbackSrc="https://placehold.co/200x80/white/black?text=BGI"
                 />
               </a>
+              <a 
+                href="https://www.takarabio.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group transform hover:-translate-y-1 block"
+              >
+                <ImageWithFallback
+                  src="/images/products_img/brands/lifescience/takara.png"
+                  alt="Takara Bio"
+                  width={160}
+                  height={60}
+                  className="h-12 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                  fallbackSrc="https://placehold.co/200x80/white/black?text=Takara"
+                />
+              </a>
             </div>
           </div>
         </div>
