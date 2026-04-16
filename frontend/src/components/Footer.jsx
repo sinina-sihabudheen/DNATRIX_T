@@ -13,9 +13,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 border-b border-gray-600 pb-6">
           <h2 className="text-xl md:text-2xl font-medium">Focused on Working with Advancement</h2>
-          <button className="mt-4 md:mt-0 bg-linear-to-r from-teal-600 to-gray-500 hover:from-teal-500 hover:to-gray-400 text-white px-5 py-3 rounded-full font-bold shadow-lg uppercase text-xs tracking-wide">
-            CONTACT US
-          </button>
+          <Link href="/contact">
+            <button className="mt-4 md:mt-0 bg-linear-to-r from-teal-600 to-gray-500 hover:from-teal-500 hover:to-gray-400 text-white px-5 py-3 rounded-full font-bold shadow-lg uppercase text-xs tracking-wide transition-all hover:scale-105 active:scale-95">
+              CONTACT US
+            </button>
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-x-2 gap-y-8 mb-10 text-sm text-gray-300">
