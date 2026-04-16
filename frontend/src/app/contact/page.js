@@ -108,13 +108,12 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-bold text-gray-700 mb-1">Phone number <span className="text-red-500">*</span></label>
+                <label htmlFor="phone" className="block text-sm font-bold text-gray-700 mb-1">Phone number</label>
                 <input
                   type="tel"
                   id="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  required
                   className="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-teal-500 transition-colors"
                 />
               </div>

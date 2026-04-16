@@ -6,8 +6,8 @@ export async function POST(request) {
     const { name, email, phone, message } = await request.json();
 
     // Validate input
-    if (!name || !email || !phone || !message) {
-      return NextResponse.json({ error: 'All fields are required' }, { status: 400 });
+    if (!name || !email || !message) {
+      return NextResponse.json({ error: 'Name, email, and description are required' }, { status: 400 });
     }
 
     // Check for environment variables
@@ -37,7 +37,7 @@ export async function POST(request) {
           <div style="background-color: #f9fafb; padding: 15px; border-radius: 8px;">
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
             <p><strong>Product Description:</strong></p>
             <p style="white-space: pre-wrap;">${message}</p>
           </div>
