@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { 
-  Search, Dna, Facebook, Twitter, Linkedin, Instagram, 
-  Menu, X, Microscope, FlaskConical, Stethoscope, 
+import {
+  Search, Dna, Facebook, Twitter, Linkedin, Instagram,
+  Menu, X, Microscope, FlaskConical, Stethoscope,
   Activity, Syringe, Users, Headphones, Phone, Mail, MapPin,
   ChevronRight, ArrowRight, Wrench, HandCoins,
   UserCheck, BadgeDollarSign, LifeBuoy, UsersRound,
@@ -14,18 +14,18 @@ import ImageWithFallback from '@/components/ImageWithFallback';
 export default function About() {
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
-      
+
 
       {/* Hero Section */}
       <div className="relative h-[400px] overflow-hidden">
         <div className="absolute inset-0">
-          <ImageWithFallback 
-            src="/images/profile/about1.jpg" 
+          <ImageWithFallback
+            src="/images/profile/about1.jpg"
             onError={(e) => {
-              e.target.onerror = null; 
+              e.target.onerror = null;
               e.target.src = "https://images.unsplash.com/photo-1516549655169-df83a092fc43?auto=format&fit=crop&w=2000&q=80"
             }}
-            alt="About DNATRIX" 
+            alt="About DNATRIX"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-teal-900/40"></div>
@@ -41,18 +41,18 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
               {/* DNA Circle Logo Placeholder */}
-               <div className="w-64 h-64 relative flex items-center justify-center">
-                 {/* <div className="absolute inset-0 border-4 border-dashed border-gray-300 rounded-full animate-spin-slow"></div> */}
-                 <Dna size={120} className="text-teal-600" />
-                 <ImageWithFallback 
-                    src="/images/profile/img_circle.png" 
-                    fallbackSrc="https://images.unsplash.com/photo-1516549655169-df83a092fc43?auto=format&fit=crop&w=2000&q=80"
-                    alt="About DNATRIX logo" 
-                    className="w-full h-full object-cover"
-                  />        
-                 {/* Or use an image if available */}
-                 {/* <ImageWithFallback src="/images/dna-circle.png" alt="DNA Circle" className="w-full h-full object-contain" /> */}
-               </div>
+              <div className="w-64 h-64 relative flex items-center justify-center">
+                {/* <div className="absolute inset-0 border-4 border-dashed border-gray-300 rounded-full animate-spin-slow"></div> */}
+                <Dna size={120} className="text-teal-600" />
+                <ImageWithFallback
+                  src="/images/profile/img_circle.png"
+                  fallbackSrc="https://images.unsplash.com/photo-1516549655169-df83a092fc43?auto=format&fit=crop&w=2000&q=80"
+                  alt="About DNATRIX logo"
+                  className="w-full h-full object-cover"
+                />
+                {/* Or use an image if available */}
+                {/* <ImageWithFallback src="/images/dna-circle.png" alt="DNA Circle" className="w-full h-full object-contain" /> */}
+              </div>
             </div>
             <div>
               <p className="text-gray-700 mb-6 leading-relaxed font-medium">
@@ -93,7 +93,7 @@ export default function About() {
             ].map((item, idx) => (
               <div key={idx} className="bg-gradient-to-b from-teal-500 to-gray-700 rounded-xl p-8 text-center text-white shadow-xl hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center">
 
-              {/* // <div key={idx} className="bg-gradient-to-b from-teal-400 to-teal-600 rounded-xl p-8 text-center text-white shadow-xl hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center w-full h-full"> */}
+                {/* // <div key={idx} className="bg-gradient-to-b from-teal-400 to-teal-600 rounded-xl p-8 text-center text-white shadow-xl hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center w-full h-full"> */}
                 <div className="w-20 h-20 bg-orange-400 rounded-full flex items-center justify-center mb-6 shadow-lg ring-4 ring-white/20">
                   <item.icon className="w-10 h-10 text-white" />
                 </div>
@@ -107,47 +107,47 @@ export default function About() {
         </div>
       </div>
 
-    
-    <div className="py-16 bg-[#0d8173]">
-      <div className="max-w-7xl mx-auto px-6">
 
-        {/* Title */}
-        <h2 className="text-center text-white text-3xl font-bold uppercase mb-12">
-          Who We Are
-        </h2>
+      <div className="py-16 bg-[#0d8173]">
+        <div className="max-w-7xl mx-auto px-6">
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Title */}
+          <h2 className="text-center text-white text-3xl font-bold uppercase mb-12">
+            Who We Are
+          </h2>
 
-          {[
-            {
-              img: "/images/profile/image_14.png",
-              text: "More than 30 years of\nexperience in the industry",
-            },
-            {
-              img: "/images/profile/image_18.jpg",
-              text: "Laboratory\nfocused",
-            },
-            {
-              img: "/images/profile/image_13.jpg",
-              text: "In house certified center\nfor repair and after sale service",
-            },
-            {
-              img: "/images/profile/image_15.png",
-              text: "Key accounts include universities,\ngovernment authorities and private institutions",
-            },
-            {
-              img: "/images/profile/image_12.jpg",
-              text: "Middle east\nmarket access",
-            },
-            {
-              img: "/images/profile/image_11.png",
-              text: "21000 sq/ft of warehousing space",
-            },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="
+          {/* Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            {[
+              {
+                img: "/images/profile/image_14.png",
+                text: "More than 30 years of\nexperience in the industry",
+              },
+              {
+                img: "/images/profile/image_18.jpg",
+                text: "Laboratory\nfocused",
+              },
+              {
+                img: "/images/profile/image_13.jpg",
+                text: "In house certified center\nfor repair and after sale service",
+              },
+              {
+                img: "/images/profile/image_15.png",
+                text: "Key accounts include universities,\ngovernment authorities and private institutions",
+              },
+              {
+                img: "/images/profile/image_12.jpg",
+                text: "Middle east\nmarket access",
+              },
+              {
+                img: "/images/profile/image_11.png",
+                text: "21000 sq/ft of warehousing space",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="
               bg-[#08504a]
                 rounded-lg
                 shadow-md
@@ -159,95 +159,95 @@ export default function About() {
                 text-center
                 h-[230px]
               "
-            >
-              {/* Icon circle */}
-              <div className="w-30 h-30 bg-[#0f766e]  flex items-center justify-center mb-4">
-                <img
-                  src={item.img}
-                  alt="icon"
-                  className="w-35 h-35  object-contain"
-                />
-              </div>
+              >
+                {/* Icon circle */}
+                <div className="w-30 h-30 bg-[#0f766e]  flex items-center justify-center mb-4">
+                  <img
+                    src={item.img}
+                    alt="icon"
+                    className="w-35 h-35  object-contain"
+                  />
+                </div>
 
-              {/* Text */}
-              <p className="text-white text-sm font-medium leading-snug whitespace-pre-line">
-                {item.text}
+                {/* Text */}
+                <p className="text-white text-sm font-medium leading-snug whitespace-pre-line">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+
+          </div>
+        </div>
+      </div>
+
+      {/* Certifications Section */}
+      <div className="py-20 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+            <div className="md:w-1/2">
+              <span className="text-orange-500 font-bold uppercase text-sm tracking-wider">Quality Assurance</span>
+              <h2 className="text-3xl font-bold text-gray-900 mt-2 mb-6">Our Certifications</h2>
+              <div className="w-20 h-1 bg-linear-to-r from-teal-400 to-teal-600 mb-6"></div>
+              <p className="text-gray-600 leading-relaxed mb-6 italic">
+                "DNATRIX is committed to excellence. Our ISO 9001 and ICV certifications stand as a testament to our dedication to quality management and our integral role in the UAE's economic growth."
               </p>
             </div>
-          ))}
 
-        </div>
-      </div>
-    </div>
-
-    {/* Certifications Section */}
-    <div className="py-20 bg-gray-50 border-y border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-          <div className="md:w-1/2">
-            <span className="text-orange-500 font-bold uppercase text-sm tracking-wider">Quality Assurance</span>
-            <h2 className="text-3xl font-bold text-gray-900 mt-2 mb-6">Our Certifications</h2>
-            <div className="w-20 h-1 bg-linear-to-r from-teal-400 to-teal-600 mb-6"></div>
-            <p className="text-gray-600 leading-relaxed mb-6 italic">
-              "DNATRIX is committed to excellence. Our ISO 9001 and ICV certifications stand as a testament to our dedication to quality management and our integral role in the UAE's economic growth."
-            </p>
-          </div>
-          
-          <div className="md:w-1/2 flex justify-center items-center gap-12">
-            <div className="flex flex-col items-center gap-4 group">
-              <div className="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm transition-all duration-300 group-hover:shadow-xl group-hover:border-teal-200 group-hover:-translate-y-1">
-                <ImageWithFallback
-                  src="/images/iso_certified.png"
-                  alt="ISO 9001 Certification"
-                  width={120}
-                  height={120}
-                  className="h-28 w-auto object-contain"
-                />
+            <div className="md:w-1/2 flex justify-center items-center gap-12">
+              <div className="flex flex-col items-center gap-4 group">
+                <div className="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm transition-all duration-300 group-hover:shadow-xl group-hover:border-teal-200 group-hover:-translate-y-1">
+                  <ImageWithFallback
+                    src="/images/iso_certified.png"
+                    alt="ISO 9001 Certification"
+                    width={120}
+                    height={120}
+                    className="h-28 w-auto object-contain"
+                  />
+                </div>
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest group-hover:text-teal-600 transition-colors">ISO 9001 Certified</p>
               </div>
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest group-hover:text-teal-600 transition-colors">ISO 9001 Certified</p>
-            </div>
 
-            <div className="flex flex-col items-center gap-4 group">
-              <div className="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm transition-all duration-300 group-hover:shadow-xl group-hover:border-teal-200 group-hover:-translate-y-1">
-                <ImageWithFallback
-                  src="/images/icv_certified.png"
-                  alt="ICV Certification"
-                  width={120}
-                  height={120}
-                  className="h-28 w-auto object-contain"
-                />
+              <div className="flex flex-col items-center gap-4 group">
+                <div className="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm transition-all duration-300 group-hover:shadow-xl group-hover:border-teal-200 group-hover:-translate-y-1">
+                  <ImageWithFallback
+                    src="/images/icv_certified.png"
+                    alt="ICV Certification"
+                    width={120}
+                    height={120}
+                    className="h-28 w-auto object-contain"
+                  />
+                </div>
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest group-hover:text-teal-600 transition-colors">ICV Certified</p>
               </div>
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest group-hover:text-teal-600 transition-colors">ICV Certified</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-   
+
 
       {/* Key Accounts (Partners) */}
       <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <span className="text-orange-500 font-bold uppercase text-sm tracking-wider">Our Partners</span>
           <h2 className="text-3xl font-bold text-gray-900 mt-2 mb-12">Key Accounts</h2>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-70 grayscale hover:grayscale-0 transition-all">
-             {/* Reusing the loop from home page, limiting to fewer or same as home */}
-             {[1,2,3,4,5,6,7,8].map((i) => (
-               <div key={i} className="bg-white p-4 rounded-lg shadow-sm h-20 flex items-center justify-center">
-                 <ImageWithFallback 
-                   src={`/images/partners/${i}.png`} 
-                   onError={(e) => {
-                     e.target.onerror = null; 
-                     e.target.style.display = 'none';
-                     e.target.nextSibling.style.display = 'block';
-                   }}
-                   alt={`Partner ${i}`}
-                   className="max-h-full max-w-full"
-                 />
-                 <span className="font-bold text-gray-400 hidden">PARTNER {i}</span>
-               </div>
-             ))}
+            {/* Reusing the loop from home page, limiting to fewer or same as home */}
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) => (
+              <div key={i} className="bg-white p-4 rounded-lg shadow-sm h-20 flex items-center justify-center">
+                <ImageWithFallback
+                  src={`/images/partners/${i}.png`}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'block';
+                  }}
+                  alt={`Partner ${i}`}
+                  className="max-h-full max-w-full"
+                />
+                <span className="font-bold text-gray-400 hidden">PARTNER {i}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

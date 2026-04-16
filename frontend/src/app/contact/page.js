@@ -42,7 +42,7 @@ export default function Contact() {
       if (!response.ok) {
         throw new Error(data.error || 'Failed to send message');
       }
-      
+
       setStatus('success');
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       setTimeout(() => setStatus('idle'), 5000);
@@ -58,10 +58,10 @@ export default function Contact() {
       {/* Hero Section */}
       <div className="relative h-[300px] md:h-[400px] overflow-hidden">
         <div className="absolute inset-0">
-          <ImageWithFallback 
-            src="/images/contact-bg.jpg" 
+          <ImageWithFallback
+            src="/images/contact-bg.jpg"
             fallbackSrc="https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&w=2000&q=80"
-            alt="Contact Us" 
+            alt="Contact Us"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-teal-900/40"></div>
@@ -74,56 +74,56 @@ export default function Contact() {
       {/* Contact Content */}
       <div className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16">
-          
+
           {/* Contact Form */}
           <div>
             <div className="mb-8">
               <span className="uppercase tracking-wider text-sm font-bold border-b-2 border-orange-500 pb-1">Get in touch with us</span>
             </div>
-            
+
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-1">Name <span className="text-red-500">*</span></label>
-                  <input 
-                    type="text" 
-                    id="name" 
+                  <input
+                    type="text"
+                    id="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-teal-500 transition-colors" 
+                    className="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-teal-500 transition-colors"
                   />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-1">Email <span className="text-red-500">*</span></label>
-                  <input 
-                    type="email" 
-                    id="email" 
+                  <input
+                    type="email"
+                    id="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-teal-500 transition-colors" 
+                    className="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-teal-500 transition-colors"
                   />
                 </div>
               </div>
 
               <div>
                 <label htmlFor="phone" className="block text-sm font-bold text-gray-700 mb-1">Phone number <span className="text-red-500">*</span></label>
-                <input 
-                  type="tel" 
-                  id="phone" 
+                <input
+                  type="tel"
+                  id="phone"
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-teal-500 transition-colors" 
+                  className="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-teal-500 transition-colors"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-bold text-gray-700 mb-1">Message <span className="text-red-500">*</span></label>
-                <textarea 
-                  id="message" 
-                  rows={4} 
+                <label htmlFor="message" className="block text-sm font-bold text-gray-700 mb-1">Product Description <span className="text-red-500">*</span></label>
+                <textarea
+                  id="message"
+                  rows={4}
                   value={formData.message}
                   onChange={handleChange}
                   required
@@ -131,25 +131,40 @@ export default function Contact() {
                 ></textarea>
               </div>
 
-              <div className="flex items-center gap-4">
-                <button 
-                  type="submit" 
+              <div className="flex flex-col gap-4">
+                <button
+                  type="submit"
                   disabled={status === 'loading' || status === 'success'}
                   className={`
-                    flex items-center gap-2 font-bold py-2 px-6 rounded transition-all
-                    ${status === 'success' ? 'bg-green-500 text-white cursor-default' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}
+                    w-full md:w-fit flex items-center justify-center gap-2 font-bold py-3 px-8 rounded transition-all shadow-md
+                    ${status === 'success' ? 'bg-green-600 text-white cursor-default' : 'bg-teal-600 text-white hover:bg-teal-700'}
                     ${status === 'loading' ? 'opacity-75 cursor-wait' : ''}
                   `}
                 >
                   {status === 'loading' && <Loader2 size={18} className="animate-spin" />}
-                  {status === 'success' ? 'Sent Successfully' : 'Submit'}
+                  {status === 'success' ? 'Sent' : 'Request Quote'}
                   {status === 'success' && <CheckCircle2 size={18} />}
                 </button>
 
+                {status === 'success' && (
+                  <div className="p-4 bg-green-50 border border-green-100 rounded-lg flex items-start gap-4 animate-in fade-in slide-in-from-top-2 duration-700">
+                    <div className="bg-green-100 p-2 rounded-full text-green-600">
+                      <CheckCircle2 size={24} />
+                    </div>
+                    <div>
+                      <p className="font-bold text-green-900 text-lg">Quote Request Sent Successfully!</p>
+                      <p className="text-green-700 mt-1 leading-relaxed text-sm lg:text-base">
+                        Our team will review your request and contact you through mail. <br className="hidden md:block" />
+                        Thank you for contacting us.
+                      </p>
+                    </div>
+                  </div>
+                )}
+
                 {status === 'error' && (
-                  <div className="text-red-500 text-sm flex items-center gap-1">
-                    <XCircle size={16} />
-                    {errorMessage || 'Failed to send message.'}
+                  <div className="text-red-600 p-3 bg-red-50 border border-red-100 rounded flex items-center gap-2">
+                    <XCircle size={18} />
+                    <span className="font-medium">{errorMessage || 'Failed to send message.'}</span>
                   </div>
                 )}
               </div>
@@ -181,15 +196,15 @@ export default function Contact() {
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="font-bold text-gray-700 w-20">Phone</span>
                     <span className="text-gray-600">: +9715 0730 0463</span>
-                    <a 
-                      href="https://wa.me/971507300463" 
-                      target="_blank" 
+                    {/* <a
+                      href="https://wa.me/971507300463"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#25D366] hover:bg-[#128C7E] text-white text-xs font-bold rounded-full transition-colors shadow-sm ml-1"
                     >
                       <MessageCircle size={14} />
                       WhatsApp
-                    </a>
+                    </a> */}
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="font-bold text-gray-700 w-20">Landline</span>

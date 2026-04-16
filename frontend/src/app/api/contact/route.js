@@ -30,15 +30,15 @@ export async function POST(request) {
       // to: 'sininasihabudheen123@gmail.com', // for test
 
       replyTo: email,
-      subject: `New Contact Request from DNATRIX Website - ${name}`,
+      subject: `New Quote Request from DNATRIX Website - ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">
-          <h2 style="color: #0d9488;">New Contact Request From DNATRIX Website </h2>
+          <h2 style="color: #0d9488;">New Quote Request From DNATRIX Website </h2>
           <div style="background-color: #f9fafb; padding: 15px; border-radius: 8px;">
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Phone:</strong> ${phone}</p>
-            <p><strong>Message:</strong></p>
+            <p><strong>Product Description:</strong></p>
             <p style="white-space: pre-wrap;">${message}</p>
           </div>
         </div>
