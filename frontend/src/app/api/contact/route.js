@@ -11,24 +11,32 @@ export async function POST(request) {
     }
 
     // Check for environment variables
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    const user = process.env.SMTP_USER || process.env.EMAIL_USER;
+    const pass = process.env.SMTP_PASS || process.env.EMAIL_PASS;
+
+    if (!user || !pass) {
       console.error('Missing email configuration');
       return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
     }
 
     const transporter = nodemailer.createTransport({
-      service: 'gmail', // You can change this to your email provider (e.g., 'outlook', 'yahoo') or use host/port
+      host: process.env.SMTP_HOST || 'smtp.gmail.com',
+      port: parseInt(process.env.SMTP_PORT || '587'),
+      secure: process.env.SMTP_SECURE === 'true',
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: process.env.SMTP_USER || process.env.EMAIL_USER,
+        pass: process.env.SMTP_PASS || process.env.EMAIL_PASS,
       },
+      tls: {
+        rejectUnauthorized: false // Helps with some hosting environments
+      }
     });
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: 'info@dnatrixme.com', // The destination email
-      // to: 'sininasihabudheen123@gmail.com', // for test
-
+      from: process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER || process.env.EMAIL_USER,
+      // to: process.env.COMPANY_EMAIL || 'info@dnatrixme.com',
+      // to: process.env.COMPANY_EMAIL || 'sininasihabudheen123@gmail.com',  // for testing
+      to: process.env.COMPANY_EMAIL,
       replyTo: email,
       subject: `New Quote Request from DNATRIX Website - ${name}`,
       html: `
