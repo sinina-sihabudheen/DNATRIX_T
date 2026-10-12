@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
-import { Mail, Briefcase, Users, Star, ArrowRight } from 'lucide-react';
+import { Mail, Briefcase, Users, Star, MapPin, Clock, Building2 } from 'lucide-react';
 import ImageWithFallback from '@/components/ImageWithFallback';
+import { jobs } from '@/app/data/jobs';
 
 export default function Careers() {
   return (
@@ -76,6 +77,82 @@ export default function Careers() {
                 Our team will review your application and contact you if there is a suitable opportunity.
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Open Positions */}
+        <div className="mb-16">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-gray-800 mb-3">Open Positions</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore our current openings and take the next step in your career with DNATRIX.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {jobs.map((job) => (
+              <article
+                key={job.id}
+                id={job.slug}
+                className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+              >
+                <div className="p-8 md:p-10">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-800 mb-3">{job.title}</h3>
+                      <div className="flex flex-wrap gap-3 text-sm text-gray-600">
+                        <span className="inline-flex items-center gap-1.5 bg-teal-50 text-teal-700 px-3 py-1 rounded-lg">
+                          <Building2 size={14} />
+                          {job.department}
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 bg-gray-50 text-gray-700 px-3 py-1 rounded-lg">
+                          <MapPin size={14} />
+                          {job.location}
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 bg-gray-50 text-gray-700 px-3 py-1 rounded-lg">
+                          <Clock size={14} />
+                          {job.type}
+                        </span>
+                      </div>
+                    </div>
+                    <a
+                      href={`mailto:admin@dnatrixme.com?subject=${encodeURIComponent(`Application for ${job.title}`)}`}
+                      className="inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors whitespace-nowrap"
+                    >
+                      <Mail size={18} />
+                      Apply Now
+                    </a>
+                  </div>
+
+                  <p className="text-gray-600 leading-relaxed mb-8">{job.excerpt}</p>
+
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h4 className="text-lg font-bold text-gray-800 mb-4">Responsibilities</h4>
+                      <ul className="space-y-2.5">
+                        {job.responsibilities.map((item) => (
+                          <li key={item} className="flex gap-3 text-gray-600 text-sm leading-relaxed">
+                            <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-teal-500 shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-gray-800 mb-4">Requirements</h4>
+                      <ul className="space-y-2.5">
+                        {job.requirements.map((item) => (
+                          <li key={item} className="flex gap-3 text-gray-600 text-sm leading-relaxed">
+                            <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-teal-500 shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
 
