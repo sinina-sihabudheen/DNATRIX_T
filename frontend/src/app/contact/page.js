@@ -195,15 +195,7 @@ export default function Contact() {
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="font-bold text-gray-700 w-20">Phone</span>
                     <span className="text-gray-600">: +9715 0730 0463</span>
-                    {/* <a
-                      href="https://wa.me/971507300463"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#25D366] hover:bg-[#128C7E] text-white text-xs font-bold rounded-full transition-colors shadow-sm ml-1"
-                    >
-                      <MessageCircle size={14} />
-                      WhatsApp
-                    </a> */}
+                    
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="font-bold text-gray-700 w-20">Landline</span>

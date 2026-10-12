@@ -115,13 +115,57 @@ export default function Careers() {
                         </span>
                       </div>
                     </div>
-                    <a
+                    {/* <a
                       href={`mailto:admin@dnatrixme.com?subject=${encodeURIComponent(`Application for ${job.title}`)}`}
                       className="inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors whitespace-nowrap"
                     >
                       <Mail size={18} />
                       Apply Now
-                    </a>
+                    </a> */}
+
+
+                                        
+                    {/* <div className="flex flex-wrap gap-3"> */}
+                      {/* Option 1: Default email application */}
+                      {/* <a
+                        href={`mailto:admin@dnatrixme.com?subject=${encodeURIComponent(
+                          `Application for ${job.title}`
+                        )}`}
+                        className="inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors whitespace-nowrap"
+                      >
+                        <Mail size={18} />
+                        Apply Now
+                      </a> */}
+
+                      {/* Option 2: Open Gmail directly */}
+                      {/* <a
+                        href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+                          'admin@dnatrixme.com'
+                        )}&su=${encodeURIComponent(`Application for ${job.title}`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-teal-700 border border-teal-600 font-semibold px-6 py-3 rounded-xl transition-colors whitespace-nowrap"
+                      >
+                        <Mail size={18} />
+                        Open in Gmail
+                      </a> */}
+                    {/* </div> */}
+
+
+                      {/*Direct gmail open */}
+                      <a
+                        href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+                          'admin@dnatrixme.com'
+                        )}&su=${encodeURIComponent(`Application for ${job.title}`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors whitespace-nowrap"
+                      >
+                        <Mail size={18} />
+                        Apply Now
+                      </a>
+
+
                   </div>
 
                   <p className="text-gray-600 leading-relaxed mb-8">{job.excerpt}</p>
