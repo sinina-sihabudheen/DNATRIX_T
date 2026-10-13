@@ -1,58 +1,3 @@
-// import { Geist, Geist_Mono } from "next/font/google";
-// import "./globals.css";
-// import Navbar from "@/components/Navbar";
-// import Footer from "@/components/Footer";
-// import WhatsAppButton from "@/components/WhatsAppButton";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
-// export const metadata = {
-//   title: "DNATRIX | Medical & Laboratory Solutions UAE",
-//   description: "DNATRIX provides advanced medical equipment, laboratory solutions, and turnkey laboratory setups across the UAE and GCC. Specialized in Life Science, Food Microbiology, and Molecular Diagnostics.",
-//   keywords: ["Medical Equipment UAE", "Laboratory Solutions Dubai", "Turnkey Laboratory", "Genomics UAE", "Molecular Diagnostics", "DNATRIX"],
-//   icons: {
-//     icon: '/images/dnalogo.png',
-//     shortcut: '/images/dnalogo.png',
-//     apple: '/images/dnalogo.png',
-//   },
-//   openGraph: {
-//     title: "DNATRIX | Medical & Laboratory Solutions",
-//     description: "Your trusted partner for medical and laboratory excellence in the UAE.",
-//     url: 'https://dnatrixme.com',
-//     siteName: 'DNATRIX',
-//     locale: 'en_US',
-//     type: 'website',
-//   },
-// };
-
-// export default function RootLayout({ children }) {
-//   return (
-//     <html lang="en">
-//       <body
-//         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-//       >
-//         <Navbar />
-//         {children}
-//         <WhatsAppButton />
-//         <Footer />
-//       </body>
-//     </html>
-//   );
-// }
-
-
-
-
-
-
 
 
 import { Geist, Geist_Mono } from "next/font/google";
@@ -89,6 +34,12 @@ export const metadata = {
     shortcut: "/images/dnalogo.png",
     apple: "/images/dnalogo.png",
   },
+  
+  // Google Search Console verification
+  verification: {
+    google: "hORSSFUEQTRiKh_BZQBOKVi_UwPJErSmagtSW1b15Hg",
+  },
+
   openGraph: {
     title: "DNATRIX | Medical & Laboratory Solutions",
     description:
@@ -128,6 +79,7 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-DYDH6246YJ');
           `}
         </Script>
+        
       </body>
     </html>
   );
