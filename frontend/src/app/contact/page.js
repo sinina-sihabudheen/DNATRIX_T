@@ -181,10 +181,26 @@ export default function Contact() {
                 <div className="text-gray-400 mt-1">
                   <MapPin size={24} />
                 </div>
-                <div>
+                {/* <div>
                   <p className="font-bold text-gray-700">Address:</p>
                   <p className="text-gray-600">FL 07, Abu Hail Centre Building,<br />Hor Al Anz - East, Dubai P.O Box.: 96658</p>
+                </div> */}
+
+                <div>
+                  <p className="font-bold text-gray-700">Address:</p>
+
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=FL+07%2C+Abu+Hail+Centre+Building%2C+Hor+Al+Anz+-+East%2C+Dubai%2C+P.O.+Box+96658"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-teal-600 transition-colors"
+                  >
+                    FL 07, Abu Hail Centre Building,
+                    <br />
+                    Hor Al Anz - East, Dubai P.O Box.: 96658
+                  </a>
                 </div>
+
               </div>
 
               <div className="flex items-start gap-4">
@@ -193,13 +209,25 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className="font-bold text-gray-700 w-20">Phone</span>
-                    <span className="text-gray-600">: +9715 0730 0463</span>
+                    <span className="font-bold text-gray-700 w-20">Phone:</span>
+                    <a
+                      href="tel:+971507300463"
+                      className="text-gray-600 hover:text-teal-600 transition-colors"
+                    >
+                      +9715 0730 0463
+                    </a>
+                    {/* <span className="text-gray-600">: +9715 0730 0463</span> */}
                     
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="font-bold text-gray-700 w-20">Landline</span>
-                    <span className="text-gray-600">: +9714 336 4622</span>
+                    <span className="font-bold text-gray-700 w-20">Landline:</span>
+                    <a
+                      href="tel:+971507300463"
+                      className="text-gray-600 hover:text-teal-600 transition-colors"
+                    >
+                      +9714 336 4622
+                    </a>
+                    {/* <span className="text-gray-600">: +9714 336 4622</span> */}
                   </div>
                 </div>
               </div>
@@ -209,8 +237,8 @@ export default function Contact() {
                   <MessageSquare size={24} />
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="font-bold text-gray-700 w-20">Email</span>
-                  <a href="mailto:info@dnatrixme.com" className="text-gray-600 font-bold hover:text-teal-600 transition-colors">: info@dnatrixme.com</a>
+                  <span className="font-bold text-gray-700 w-20">Email:</span>
+                  <a href="mailto:info@dnatrixme.com" className="text-gray-600 font-bold hover:text-teal-600 transition-colors"> info@dnatrixme.com</a>
                 </div>
               </div>
             </div>

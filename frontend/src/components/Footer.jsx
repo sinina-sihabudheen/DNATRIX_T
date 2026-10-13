@@ -21,15 +21,7 @@ export default function Footer() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-x-2 gap-y-8 mb-10 text-sm text-gray-300">
-          {/* Logo Section */}
-          {/* <div className="lg:col-span-3 flex items-start">
-             <ImageWithFallback 
-               src="/images/dnalogo1.png" 
-              //  src="/images/profile/logoring.png" 
-               alt="DNA TRIX" 
-               className="w-40 h-auto rounded-xl"
-             />
-          </div> */}
+          
           <div className="lg:col-span-3 flex flex-col items-start">
             {/* DNATRIX Logo */}
             <ImageWithFallback
@@ -156,25 +148,53 @@ export default function Footer() {
           <div className="lg:col-span-3">
             <h4 className="font-bold text-white mb-4 uppercase tracking-wider text-sm">Corporate Headquarters</h4>
             <div className="space-y-4">
-              <p className="font-bold text-white text-base">DNATRIX</p>
+              <p className="font-bold text-gray text-base">DNATRIX</p>
               
-              <div className="space-y-0.5">
+              {/* <div className="space-y-0.5">
                 <p className="leading-snug">
                   <span className="text-gray-400 text-xs uppercase tracking-wide mr-2">Address:</span>
                   FL 07, Abu Hail Centre Building,<br/>
                   Hor Al Anz - East, Dubai<br/>
                   P.O Box.: 99558
+                  
+                </p>
+              </div> */}
+                
+              <div className="space-y-0.5">
+                <p className="leading-snug">
+                  <span className="text-gray-400 text-xs uppercase tracking-wide mr-2">
+                    Address:
+                  </span>
+
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=FL+07%2C+Abu+Hail+Centre+Building%2C+Hor+Al+Anz+-+East%2C+Dubai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-200 hover:text-teal-600 transition-colors"
+                  >
+                    FL 07, Abu Hail Centre Building,
+                    <br />
+                    Hor Al Anz - East, Dubai
+                    <br />
+                    P.O Box.: 99558
+                  </a>
                 </p>
               </div>
 
-              <div className="space-y-0.5">
+
+              {/* <div className="space-y-0.5">
                 <p className="leading-snug">
                   <span className="text-gray-400 text-xs uppercase tracking-wide mr-2">Email:</span>
                   Info@dnatrixme.com
                 </p>
+              </div> */}
+              <div className="flex items-center gap-2">
+                  <span className="text-gray-400 uppercase tracking-wide mr-2">Email:</span>
+                  <a href="mailto:info@dnatrixme.com" className="text-gray-200 hover:text-teal-600 transition-colors">info@dnatrixme.com</a>
               </div>
+              
 
-              <div className="space-y-0.5">
+              {/* <div className="space-y-0.5">
                 <p className="leading-snug">
                   <span className="text-gray-400 text-xs uppercase tracking-wide mr-2">Phone:</span>
                   +9715 0730 0463
@@ -186,7 +206,29 @@ export default function Footer() {
                   <span className="text-gray-400 text-xs uppercase tracking-wide mr-2">Landline:</span>
                   +9714 336 4622
                 </p>
-              </div>
+              </div> */}
+              <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-gray-400 text-xs uppercase tracking-wide mr-2">Phone:</span>
+                    <a
+                      href="tel:+971507300463"
+                      className="text-gray-200 hover:text-teal-600 transition-colors"
+                    >
+                      +9715 0730 0463
+                    </a>
+                    {/* <span className="text-gray-600">: +9715 0730 0463</span> */}
+                    
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-gray-400 text-xs uppercase tracking-wide mr-2">Landline:</span>
+                    <a
+                      href="tel:+971507300463"
+                      className="text-gray-200 hover:text-teal-600 transition-colors"
+                    >
+                      +9714 336 4622
+                    </a>
+                    {/* <span className="text-gray-600">: +9714 336 4622</span> */}
+                  </div>
+
             </div> 
           </div>
         </div>       

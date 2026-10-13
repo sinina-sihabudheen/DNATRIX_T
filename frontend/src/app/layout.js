@@ -20,13 +20,14 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "DNATRIX | Medical & Laboratory Solutions UAE",
   description:
-    "DNATRIX provides advanced medical equipment, laboratory solutions, and turnkey laboratory setups across the UAE and GCC. Specialized in Life Science, Food Microbiology, and Molecular Diagnostics.",
+"DNATRIX provides advanced medical equipment, laboratory solutions, and turnkey laboratory setups across the UAE and GCC.", // Specialized in Life Science, Food Microbiology, and Molecular Diagnostics.
   keywords: [
     "Medical Equipment UAE",
     "Laboratory Solutions Dubai",
     "Turnkey Laboratory",
     "Genomics UAE",
     "Molecular Diagnostics",
+    "Food Microbiology",
     "DNATRIX",
   ],
   icons: {
